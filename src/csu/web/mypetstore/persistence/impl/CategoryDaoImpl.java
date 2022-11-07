@@ -2,6 +2,7 @@ package csu.web.mypetstore.persistence.impl;
 
 import csu.web.mypetstore.domain.Category;
 import csu.web.mypetstore.persistence.CategoryDAO;
+
 import csu.web.mypetstore.persistence.DBUtil;
 
 import java.sql.Connection;
@@ -11,8 +12,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryDaoImpl implements CategoryDAO {
 
+public class CategoryDaoImpl implements CategoryDAO {
     private static final String GET_CATEGORY_LIST =
             "SELECT CATID AS categoryId, NAME, DESCN AS description FROM CATEGORY";
 
@@ -21,43 +22,44 @@ public class CategoryDaoImpl implements CategoryDAO {
 
     @Override
     public List<Category> getCategoryList() {
-        List<Category> categoryList = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
         try{
             Connection connection = DBUtil.getConnection();
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(GET_CATEGORY_LIST);
-            while(resultSet.next()){
+            while (resultSet.next()){
                 Category category = new Category();
                 category.setCategoryId(resultSet.getString("categoryId"));
                 category.setName(resultSet.getString("NAME"));
                 category.setDescription(resultSet.getString("description"));
-                categoryList.add(category);
+                getCategoryList().add(category);
             }
-            DBUtil.closeResultSet(resultSet);
-            DBUtil.closeStatement(statement);
-            DBUtil.closeConnection(connection);
+            resultSet.close();
+            statement.close();
+            connection.close();
         }catch (Exception e){
             e.printStackTrace();
         }
-        return categoryList;
+        return categories;
     }
 
     @Override
-    public Category getCategory(String var1) {
+    public Category getCategory(String categoryId) {
         Category category = null;
         try{
             Connection connection = DBUtil.getConnection();
-            PreparedStatement statement = connection.prepareStatement(GET_CATEGORY);
-            ResultSet resultSet = statement.executeQuery();
-            if(resultSet.next()){
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_CATEGORY);
+            preparedStatement.setString(1,categoryId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
                 category = new Category();
                 category.setCategoryId(resultSet.getString("categoryId"));
                 category.setName(resultSet.getString("NAME"));
                 category.setDescription(resultSet.getString("description"));
             }
-            DBUtil.closeResultSet(resultSet);
-            DBUtil.closePreparedStatement(statement);
-            DBUtil.closeConnection(connection);
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
         }catch (Exception e){
             e.printStackTrace();
         }
