@@ -43,6 +43,7 @@ public class SignOnServlet extends HttpServlet {
                     if(loginAccount.isListOption()){
                         CatalogService catalogService = new CatalogService();
                         List<Product> myList = catalogService.getProductListByCategory(loginAccount.getFavouriteCategoryId());
+                        System.out.println(myList.size());
                         req.setAttribute("myList",myList);
                     }
                     resp.sendRedirect("mainForm");
