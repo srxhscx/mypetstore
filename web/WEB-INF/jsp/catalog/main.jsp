@@ -24,7 +24,12 @@
             <a href="categoryForm?categoryId=REPTILES"><img src="images/reptiles_icon.gif" /></a>
             <br />Lizards, Turtles, Snakes <br />
             <a href="categoryForm?categoryId=BIRDS"><img src="images/birds_icon.gif" /></a>
-            <br />Exotic Varieties</div>
+            <br />Exotic Varieties
+        </div>
+
+        <c:if test="${requestScope.loginAccount==null}">
+            error
+        </c:if>
 
     </div>
 

@@ -6,7 +6,11 @@
     </div>
 
     <div id="Banner">
-        <!--- 用户登陆Banner-->
+        <c:if test="${sessionScope.loginAccount != null }">
+            <c:if test="${sessionScope.loginAccount.bannerOption}">
+                    ${sessionScope.loginAccount.bannerName}
+            </c:if>
+        </c:if>
     </div>
 
 </div>
