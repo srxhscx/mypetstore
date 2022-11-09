@@ -25,7 +25,7 @@ public class ProductDaoImpl implements ProductDAO {
 
     @Override
     public List<Product> getProductListByCategory(String categoryId) {
-        List<Product> productList = new ArrayList<Product>();
+        List<Product> productList = new ArrayList<>();
         try{
             Connection connection = DBUtil.getConnection();
             PreparedStatement statement = connection.prepareStatement(GET_PRODUCT_LIST_BY_CATEGORY);

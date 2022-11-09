@@ -68,7 +68,7 @@
 
     <div id="MyList">
         <c:if test="${sessionScope.loginAccount != null}">
-                <c:if test="${!empty sessionScope.loginAccount.listOption}">
+                <c:if test="${sessionScope.loginAccount.listOption}">
                     <%@ include file="IncludeMyList.jsp"%>
                 </c:if>
         </c:if>
