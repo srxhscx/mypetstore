@@ -33,6 +33,7 @@
                     ${sessionScope.item.quantity} in stock.
                 </c:if></td>
         </tr>
+
         <tr>
             <td><fmt:formatNumber value="${sessionScope.item.listPrice}"
                                   pattern="$#,##0.00" />
