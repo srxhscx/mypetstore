@@ -104,4 +104,17 @@
         <servlet-name>CartForm</servlet-name>
         <url-pattern>/cartForm</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>JournalFilter</filter-name>
+        <filter-class>csu.web.mypetstore.web.servlet.JournalFilter</filter-class>
+        <init-param>
+            <param-name>site</param-name>
+            <param-value>Initialization Paramter</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>JournalFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
