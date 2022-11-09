@@ -8,8 +8,7 @@
           <element id="module-output" name="mypetstore" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="standard" />
-          <element id="library" level="project" name="mysql-connector-java-8.0.30" />
+          <element id="library" level="project" name="jstl" />
         </element>
       </element>
     </root>
