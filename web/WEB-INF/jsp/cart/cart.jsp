@@ -40,7 +40,9 @@
                                 ${cartItem.item.attribute5} ${cartItem.item.product.name}</td>
                         <td>${cartItem.inStock}</td>
                         <td>
+
                             <input type="text" name="${cartItem.item.itemId}" value="${cartItem.quantity}">
+
                         </td>
                         <td><fmt:formatNumber value="${cartItem.item.listPrice}"
                                               pattern="$#,##0.00" /></td>
@@ -55,6 +57,8 @@
                     <td colspan="7">Sub Total: <fmt:formatNumber value="${sessionScope.cart.subTotal}" pattern="$#,##0.00" />
                         <input type="submit" value="Update Cart">
                     </td>
+
+
                     <td>&nbsp;</td>
                 </tr>
             </table>

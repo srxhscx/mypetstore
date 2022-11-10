@@ -1,5 +1,6 @@
 package csu.web.mypetstore.web.servlet;
 
+import csu.web.mypetstore.domain.Account;
 import csu.web.mypetstore.domain.Cart;
 
 import csu.web.mypetstore.domain.Item;
@@ -12,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+
+
 public class AddItemToCartServlet extends HttpServlet {
+
 
     private static final String CART_FORM = "WEB-INF/jsp/cart/cart.jsp";
 
@@ -28,15 +32,26 @@ public class AddItemToCartServlet extends HttpServlet {
         }
 
         if (cart.containsItemId(workingItemId)) {
-            cart.incrementQuantityByItemId(workingItemId);
+            CatalogService catalogService = new CatalogService();
+            boolean isInStock = catalogService.isItemInStock(workingItemId);
+            if(!isInStock)
+            {
+                cart.incrementQuantityByItemId(workingItemId);
+            }
+
+
         } else {
             CatalogService catalogService = new CatalogService();
             boolean isInStock = catalogService.isItemInStock(workingItemId);
             Item item = catalogService.getItem(workingItemId);
-            cart.addItem(item, isInStock);
+                cart.addItem(item, isInStock);
+
         }
         session.setAttribute("cart",cart);
         req.getRequestDispatcher(CART_FORM).forward(req,resp);
+
     }
 
 }
+
+

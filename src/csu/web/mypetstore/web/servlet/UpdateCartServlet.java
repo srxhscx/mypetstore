@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Iterator;
 
-
 public class UpdateCartServlet extends HttpServlet {
 
     private static final String CART_FORM = "WEB-INF/jsp/cart/cart.jsp";
