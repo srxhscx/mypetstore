@@ -93,8 +93,10 @@ public class AccountDaoImpl implements AccountDAO {
     private static final String UPDATE_PROFILE =
             "UPDATE PROFILE SET\n" +
                     "      LANGPREF = ?,\n" +
-                    "      FAVCATEGORY = ?\n" +
-                    "    WHERE USERID = ?";
+                    "      FAVCATEGORY = ?,\n" +
+                    "      MYLISTOPT = ?,\n" +
+                    "      BANNEROPT = ?\n"+
+                    "    WHERE USERID = ? ";
 
     private static final String UPDATE_SIGNON =
             "INSERT INTO SIGNON (PASSWORD,USERNAME)\n" +
@@ -262,7 +264,17 @@ public class AccountDaoImpl implements AccountDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PROFILE);
             preparedStatement.setString(1,var1.getLanguagePreference());
             preparedStatement.setString(2,var1.getFavouriteCategoryId());
-            preparedStatement.setString(3,var1.getUsername());
+            if(var1.isListOption()){
+                preparedStatement.setString(3,"1");
+            }else{
+                preparedStatement.setString(3,"0");
+            }
+            if(var1.isBannerOption()){
+                preparedStatement.setString(4,"1");
+            }else{
+                preparedStatement.setString(4,"0");
+            }
+            preparedStatement.setString(5,var1.getUsername());
             preparedStatement.executeUpdate();
             DBUtil.closePreparedStatement(preparedStatement);
             DBUtil.closeConnection(connection);

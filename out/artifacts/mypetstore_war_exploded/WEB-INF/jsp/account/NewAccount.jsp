@@ -1,15 +1,5 @@
 <%@ include file="../common/top.jsp"%>
 
-<%
-    String username = "";
-    String password = "";
-
-    if( request.getAttribute( "username" ) != null ) {
-        username = ( String ) request.getAttribute( "username" );
-        password = ( String ) request.getAttribute( "password" );
-    }
-%>
-
 <div id="Catalog">
     <form action="NewAccount" method="post">
         <c:if test="${requestScope.NewAccountMSG != null}">
@@ -20,7 +10,7 @@
             <tr>
                 <td>User ID:</td>
                 <td><label>
-                    <input type="text" name="username" value="<%= username %>">
+                    <input type="text" name="username">
                 </label></td>
             </tr>
             <tr>
@@ -39,6 +29,17 @@
 
     <%@ include file="IncludeAccount.jsp"%>
 
+        <table>
+            <tr>
+                <td>Emain captcha:</td>
+                <td><label>
+                    <input type="text" name="emailCaptcha">
+                </label></td>
+                <td>
+                    <button formaction="Email" formmethod="post"><font>get Email</font></button>
+                </td>
+            </tr>
+        </table>
         <input type="submit" name="newAccount">
 
     </form>

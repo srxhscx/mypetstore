@@ -69,6 +69,33 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>EditeAccountFormServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.EditeAccountFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditeAccountFormServlet</servlet-name>
+        <url-pattern>/editeAccountForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditeAccountServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.EditeAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditeAccountServlet</servlet-name>
+        <url-pattern>/editeAccount</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmailServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.EmailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmailServlet</servlet-name>
+        <url-pattern>/Email</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>NewOrderFormServlet</servlet-name>
         <servlet-class>csu.web.mypetstore.web.servlet.NewOrderFormServlet</servlet-class>
     </servlet>

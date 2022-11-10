@@ -11,6 +11,7 @@
           <element id="library" level="project" name="stripes-1.5.4" />
           <element id="library" level="project" name="standard" />
           <element id="library" level="project" name="mysql-connector-java-8.0.30" />
+          <element id="library" level="project" name="javax.mail" />
         </element>
       </element>
     </root>

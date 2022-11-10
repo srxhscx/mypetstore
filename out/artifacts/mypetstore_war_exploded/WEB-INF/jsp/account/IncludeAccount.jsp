@@ -83,7 +83,7 @@
                 <option value="FISH">Fish</option>
                 <option value="DOGS">Dogs</option>
                 <option value="REPTILES">Reptiles</option>
-                <option value="CATES">Cats</option>
+                <option value="CATS">Cats</option>
                 <option value="BIRDS">Birds</option>
             </select>
         </td>
@@ -93,7 +93,8 @@
         <td>Enable MyList</td>
         <td>
             <label>
-                <input type="checkbox" name="listOption" value="1">yes
+                <input type="radio" name="listOption" value="1">yes
+                <input type="radio" name="listOption" value="0">no
             </label>
         </td>
     </tr>
@@ -101,7 +102,8 @@
         <td>Enable MyBanner</td>
         <td>
             <label>
-                <input type="checkbox" name="bannerOption" value="1">yes
+                <input type="radio" name="bannerOption" value="1">yes
+                <input type="radio" name="bannerOption" value="0">no
             </label>
         </td>
     </tr>

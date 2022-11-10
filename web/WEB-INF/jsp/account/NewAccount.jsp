@@ -29,6 +29,17 @@
 
     <%@ include file="IncludeAccount.jsp"%>
 
+        <table>
+            <tr>
+                <td>Emain captcha:</td>
+                <td><label>
+                    <input type="text" name="emailCaptcha">
+                </label></td>
+                <td>
+                    <button formaction="Email" formmethod="post"><font>get Email</font></button>
+                </td>
+            </tr>
+        </table>
         <input type="submit" name="newAccount">
 
     </form>
