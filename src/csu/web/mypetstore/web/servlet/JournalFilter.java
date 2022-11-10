@@ -47,4 +47,9 @@ public class JournalFilter implements Filter {
         chain.doFilter(req,resp);
     }
 
+    @Override
+    public void destroy() {
+
+    }
+
 }

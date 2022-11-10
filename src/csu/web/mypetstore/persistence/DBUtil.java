@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DBUtil {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/hsqldb";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/mypetstore";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
 

@@ -1,4 +1,5 @@
 <%@ include file="../common/top.jsp"%>
+
 <div id="Welcome">
     <div id="WelcomeContent">
         <c:if
@@ -10,6 +11,39 @@
         <!--显示登录用户的firstName-->
     </div>
 </div>
+
+<div id="RollingPicture">
+    <div id="container">
+        <div id="photo">
+            <a href="categoryForm?categoryId=CATS"><img src="images/main1.jpg" /></a>
+            <a href="categoryForm?categoryId=DOGS"><img src="images/main2.jpg" /></a>
+            <a href="categoryForm?categoryId=BIRDS"><img src="images/main3.jpg" /></a>
+            <a href="categoryForm?categoryId=CATS"><img src="images/main1.jpg" /></a>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+
+<center><h1>Recommended information</h1></center>
+<br />
+
+<div id="card1">
+    <a href="itemForm?itemId=EST-14"	><img src="images/card1.jpeg"></a>
+</div>
+<div id="card2">
+    <a href="itemForm?itemId=EST-15"	><img src="images/card2.jpeg"></a>
+</div>
+<div id="card3">
+    <a href="itemForm?itemId=EST-16"	><img src="images/card3.jpeg"></a>
+</div>
+<div id="card4">
+    <a href="itemForm?itemId=EST-17"	><img src="images/card4.jpeg"></a>
+</div>
+
+
+
 
 <div id="Main">
     <div id="Sidebar">
@@ -27,6 +61,7 @@
         </div>
 
     </div>
+
 
     <div id="MainImage">
         <div id="MainImageContent">
