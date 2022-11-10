@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Iterator;
-
 
 public class UpdateCartServlet extends HttpServlet {
 
@@ -20,40 +18,25 @@ public class UpdateCartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //从对话中，获取购物车
         HttpSession session = req.getSession();
         Cart cart = (Cart) session.getAttribute("cart");
+        Iterator<CartItem> cartItems = cart.getAllCartItems();
 
-        Iterator<CartItem> cartItemIterator = cart.getAllCartItems();
-
-        while (cartItemIterator.hasNext()) {
-            //产品数量增加
-            CartItem cartItem = (CartItem) cartItemIterator.next();
+        while (cartItems.hasNext()) {
+            CartItem cartItem = (CartItem) cartItems.next();
             String itemId = cartItem.getItem().getItemId();
-
             try {
-                int quantity = Integer.parseInt((String) req.getParameter("quantity"));
+                String quantitySring = req.getParameter(itemId);
+                int quantity = Integer.parseInt(quantitySring);
+
                 cart.setQuantityByItemId(itemId, quantity);
                 if (quantity < 1) {
-                    cartItemIterator.remove();
+                    cartItems.remove();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                //ignore parse exceptions on purpose
             }
         }
-        session.setAttribute("cart", cart);
-
-        Cart cart2 = (Cart) session.getAttribute("cart");
-        Iterator<CartItem> cartItemIterator2 = cart2.getAllCartItems();
-        String quantityAll = "";
-        while (cartItemIterator2.hasNext()) {
-            //产品数量增加
-            CartItem cartItem2 = cartItemIterator2.next();
-            int quantity2 = cartItem2.getQuantity();
-            quantityAll += quantity2 + "," + cartItem2.getTotal() + "," + cart2.getSubTotal();
-        }
-        resp.setContentType("text/xml");
-        PrintWriter out = resp.getWriter();
-        out.write(quantityAll);
+        req.getRequestDispatcher(CART_FORM).forward(req,resp);
     }
 }
