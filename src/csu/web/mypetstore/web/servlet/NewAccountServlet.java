@@ -54,16 +54,16 @@ public class NewAccountServlet extends HttpServlet {
         this.Country = req.getParameter("country");
         this.languagePreference = req.getParameter("languagePreference");
         this.favouriteCategoryId = req.getParameter("favouriteCategoryId");
-        if(req.getParameter("listOption") == "1"){
-            this.listOption = true;
-        }
-        if(req.getParameter("bannerOption") == "1"){
-            this.bannerOption = true;
-        }
         if(!validate()){
             req.setAttribute("NewAccountMSG",this.message);
             req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
         }else{
+            if(req.getParameter("listOption").equals("1")){
+                this.listOption = true;
+            }
+            if(req.getParameter("bannerOption").equals("1")){
+                this.bannerOption = true;
+            }
             AccountService accountService = new AccountService();
             Account newAccount;
             newAccount = this.getAccount();

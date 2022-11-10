@@ -6,11 +6,7 @@ import csu.web.mypetstore.persistence.impl.AccountDaoImpl;
 
 public class AccountService {
 
-    private AccountDAO accountDao;
-
-    public AccountService(){
-        accountDao = new AccountDaoImpl();
-    }
+    private AccountDAO accountDao = new AccountDaoImpl();
 
     public Account getAccount(String username) {
         return this.accountDao.getAccountByUsername(username);

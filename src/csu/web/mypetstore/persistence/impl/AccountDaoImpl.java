@@ -68,8 +68,8 @@ public class AccountDaoImpl implements AccountDAO {
                     "      (?, ?, ?, ?, ?,  ?, ?, ?, ?, ?, ?, ?)";
 
     private static final String INSERT_PROFILE =
-            "INSERT INTO PROFILE (LANGPREF, FAVCATEGORY, USERID)\n" +
-                    "    VALUES (?, ?, ?)";
+            "INSERT INTO PROFILE (LANGPREF, FAVCATEGORY, USERID, MYLISTOPT, BANNEROPT)\n" +
+                    "    VALUES (?, ?, ?, ?, ?)";
 
     private static final String INSERT_SIGNON =
             "INSERT INTO SIGNON (PASSWORD,USERNAME)\n" +
@@ -181,8 +181,7 @@ public class AccountDaoImpl implements AccountDAO {
             preparedStatement.setString(10,var1.getCountry());
             preparedStatement.setString(11,var1.getPhone());
             preparedStatement.setString(12,var1.getUsername());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            DBUtil.closeResultSet(resultSet);
+            preparedStatement.executeUpdate();
             DBUtil.closePreparedStatement(preparedStatement);
             DBUtil.closeConnection(connection);
         }catch (Exception e){
@@ -198,8 +197,17 @@ public class AccountDaoImpl implements AccountDAO {
             preparedStatement.setString(1,var1.getLanguagePreference());
             preparedStatement.setString(2,var1.getFavouriteCategoryId());
             preparedStatement.setString(3,var1.getUsername());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            DBUtil.closeResultSet(resultSet);
+            if(var1.isListOption()){
+                preparedStatement.setString(4,"1");
+            }else{
+                preparedStatement.setString(4,"0");
+            }
+            if(var1.isBannerOption()){
+                preparedStatement.setString(5,"1");
+            }else{
+                preparedStatement.setString(5,"0");
+            }
+            preparedStatement.executeUpdate();
             DBUtil.closePreparedStatement(preparedStatement);
             DBUtil.closeConnection(connection);
         }catch (Exception e){
@@ -214,8 +222,7 @@ public class AccountDaoImpl implements AccountDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_SIGNON);
             preparedStatement.setString(1,var1.getPassword());
             preparedStatement.setString(2,var1.getUsername());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            DBUtil.closeResultSet(resultSet);
+            preparedStatement.executeUpdate();
             DBUtil.closePreparedStatement(preparedStatement);
             DBUtil.closeConnection(connection);
         }catch (Exception e){
@@ -240,8 +247,7 @@ public class AccountDaoImpl implements AccountDAO {
             preparedStatement.setString(10,var1.getCountry());
             preparedStatement.setString(11,var1.getPhone());
             preparedStatement.setString(12,var1.getUsername());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            DBUtil.closeResultSet(resultSet);
+            preparedStatement.executeUpdate();
             DBUtil.closePreparedStatement(preparedStatement);
             DBUtil.closeConnection(connection);
         }catch (Exception e){
@@ -257,8 +263,7 @@ public class AccountDaoImpl implements AccountDAO {
             preparedStatement.setString(1,var1.getLanguagePreference());
             preparedStatement.setString(2,var1.getFavouriteCategoryId());
             preparedStatement.setString(3,var1.getUsername());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            DBUtil.closeResultSet(resultSet);
+            preparedStatement.executeUpdate();
             DBUtil.closePreparedStatement(preparedStatement);
             DBUtil.closeConnection(connection);
         }catch (Exception e){
@@ -273,8 +278,7 @@ public class AccountDaoImpl implements AccountDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SIGNON);
             preparedStatement.setString(1,var1.getPassword());
             preparedStatement.setString(2,var1.getUsername());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            DBUtil.closeResultSet(resultSet);
+            preparedStatement.executeUpdate();
             DBUtil.closePreparedStatement(preparedStatement);
             DBUtil.closeConnection(connection);
         }catch (Exception e){
