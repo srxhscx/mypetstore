@@ -132,6 +132,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>AddItemToCartServletPro</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.AddItemToCartServletPro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddItemToCartServletPro</servlet-name>
+        <url-pattern>/addItemToCartPro</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>UpdateCartServlet</servlet-name>
         <servlet-class>csu.web.mypetstore.web.servlet.UpdateCartServlet</servlet-class>
     </servlet>
@@ -171,4 +180,55 @@
         <filter-name>JournalFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <servlet>
+        <servlet-name>newOrderForm</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.NewOrderFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>newOrderForm</servlet-name>
+        <url-pattern>/newOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShippingAddressServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.ShippingAddressServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShippingAddressServlet</servlet-name>
+        <url-pattern>/shippingAddress</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ShippingFormServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.ShippingFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShippingFormServlet</servlet-name>
+        <url-pattern>/ShippingForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ConfirmOrderFormServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.ConfirmOrderFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfirmOrderFormServlet</servlet-name>
+        <url-pattern>/conFirmOrderForm</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ViewOrderServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.ViewOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewOrderServlet</servlet-name>
+        <url-pattern>/viewOrder</url-pattern>
+    </servlet-mapping>
+
+
+
+
 </web-app>

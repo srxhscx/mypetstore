@@ -1,6 +1,9 @@
 package csu.web.mypetstore.web.servlet;
 
+
 import csu.web.mypetstore.domain.Account;
+import csu.web.mypetstore.domain.Cart;
+import csu.web.mypetstore.domain.Order;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,17 +13,35 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class NewOrderFormServlet extends HttpServlet {
+    private static final String NEW_ORDER = "/WEB-INF/jsp/order/newOrder.jsp";
+    private static final String SIGNON_FORM = "/WEB-INF/jsp/account/signon.jsp";
+    private static final String ERROR = "/WEB-INF/jsp/common/Error.jsp";
 
-    private static final String NEW_ORDER_FORM = "WEB-INF/jsp/order/newOrder.jsp";
+    private Account account;
+    private Order order;
+    private Cart cart;
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        Account loginAccount = (Account) session.getAttribute("loginAccount");
-        if(loginAccount == null){
-            resp.sendRedirect("signonForm");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        account = (Account)session.getAttribute("loginAccount");
+        cart = (Cart)session.getAttribute("cart");
+
+        if (account == null){
+            session.setAttribute("message", "You must sign on before attempting to check out.  Please sign on and try checking out again.");
+            request.getRequestDispatcher(SIGNON_FORM).forward(request, response);
+        } else if(cart != null){
+            order = new Order();
+            order.initOrder(account, cart);
+            session.setAttribute("order", order);
+            request.getRequestDispatcher(NEW_ORDER).forward(request, response);
         }else{
-            req.getRequestDispatcher(NEW_ORDER_FORM).forward(req,resp);
+            session.setAttribute("message", "An order could not be created because a cart could not be found.");
+            request.getRequestDispatcher(ERROR).forward(request, response);
         }
     }
 }

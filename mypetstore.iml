@@ -20,10 +20,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="stripes-1.5.4" level="project" />
-    <orderEntry type="library" name="standard" level="project" />
+    <orderEntry type="library" name="mysql-connector-j-8.0.31" level="project" />
+    <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="servlet-api" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.30" level="project" />
+    <orderEntry type="library" name="jstl" level="project" />
     <orderEntry type="library" name="javax.mail" level="project" />
   </component>
 </module>
