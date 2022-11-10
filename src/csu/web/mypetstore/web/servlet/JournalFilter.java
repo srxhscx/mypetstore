@@ -36,6 +36,7 @@ public class JournalFilter implements Filter {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            System.out.println("状态");
             System.out.println(account.getUsername());
             System.out.println(new Date(System.currentTimeMillis()));
             System.out.println(httpReq.getRequestURL());
