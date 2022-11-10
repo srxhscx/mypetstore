@@ -24,8 +24,9 @@ public class SignOnServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            this.username = req.getParameter("username");
-            this.password = req.getParameter("password");
+            this.username =(String) req.getSession().getAttribute("username");
+            this.password =(String) req.getSession().getAttribute("password");
+            System.out.println(this.username+this.password);
             if(!validate()){
                 req.setAttribute("signOnMsg",this.message);
                 req.getRequestDispatcher(SIGNON_FORM).forward(req,resp);
@@ -40,15 +41,21 @@ public class SignOnServlet extends HttpServlet {
                     loginAccount.setPassword(null);
                     HttpSession session = req.getSession();
                     session.setAttribute("loginAccount",loginAccount);
+
                     if(loginAccount.isListOption()){
                         CatalogService catalogService = new CatalogService();
                         List<Product> myList = catalogService.getProductListByCategory(loginAccount.getFavouriteCategoryId());
-                        System.out.println(myList.size());
-                        req.setAttribute("myList",myList);
+                        session.setAttribute("myList",myList);
                     }
+
                     resp.sendRedirect("mainForm");
                 }
             }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doPost(req, resp);
     }
 
     private boolean validate(){

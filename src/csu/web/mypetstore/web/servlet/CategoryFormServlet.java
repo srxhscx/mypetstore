@@ -20,6 +20,9 @@ public class CategoryFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String categoryId = req.getParameter("categoryId");
+
+//        System.out.println(req.getSession().getAttribute("listlenth"));
+
         catalogService = new CatalogService();
         Category category = catalogService.getCategory(categoryId);
         List<Product> productList = catalogService.getProductListByCategory(categoryId);

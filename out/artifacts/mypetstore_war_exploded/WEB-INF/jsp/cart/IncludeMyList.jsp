@@ -1,9 +1,13 @@
 <c:if test="${!empty sessionScope.myList}">
     <p>Pet Favorites <br />
-        Shop for more of your favorite pets here.</p>
+        Shop for more of your favorite pets here.${sessionScope.myList}
+    </p>
     <ul>
         <c:forEach var="product" items="${sessionScope.myList}">
-            <a href="productForm?productId=${product.productId}">${product.name}</a>
+            <li>
+                <a href="productForm?productId=${product.productId}">${product.name}</a>
+                (${product.productId})
+            </li>
         </c:forEach>
     </ul>
 

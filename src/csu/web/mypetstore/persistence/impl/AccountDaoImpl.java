@@ -114,7 +114,7 @@ public class AccountDaoImpl implements AccountDAO {
         account.setListOption(resultSet.getBoolean("ListOption"));
         account.setAddress1(resultSet.getString("Address1"));
         account.setAddress2(resultSet.getString("Address2"));
-        //        account.setPassword(resultSet.getString("Password"));
+//        account.setPassword(resultSet.getString("password"));
         account.setPhone(resultSet.getString("phone"));
         account.setState(resultSet.getString("state"));
         account.setStatus(resultSet.getString("status"));
@@ -282,12 +282,12 @@ public class AccountDaoImpl implements AccountDAO {
         }
     }
 
-//    public static void main(String[] args){
-//        AccountDAO accountDAO = new AccountDaoImpl();
-//        Account account = new Account();
-//        account.setUsername("j2ee");
-//        account.setPassword("j2ee");
-//        Account result = accountDAO.getAccountByUsername("j2ee");
-//        System.out.println("success");
-//    }
+    public static void main(String[] args){
+        AccountDAO accountDAO = new AccountDaoImpl();
+        Account account = new Account();
+        account.setUsername("j2ee");
+        account.setPassword("j2ee");
+        Account result = accountDAO.getAccountByUsername("j2ee");
+        System.out.println("success");
+    }
 }

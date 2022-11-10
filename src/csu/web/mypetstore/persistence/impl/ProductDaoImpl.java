@@ -45,6 +45,9 @@ public class ProductDaoImpl implements ProductDAO {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        System.out.println("正常");
+
         return productList;
     }
 

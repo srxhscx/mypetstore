@@ -19,7 +19,7 @@
      </form>
 
     Need a user name and password?
-    <a href="registerform">Register now</a>
+    <a href="NewAccountForm">Register now</a>
 
 </div>
 
