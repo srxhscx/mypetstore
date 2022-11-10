@@ -41,8 +41,7 @@
                         <td>${cartItem.inStock}</td>
                         <td>
 
-                            <input type="text" id="quantity" onblur="updateCart();" name="${cartItem.item.itemId}" value="${cartItem.quantity}">
-                            <script type="text/javascript" src="${pageContext.request.contextPath }/js/updateCart.js"></script>
+                            <input type="text" name="${cartItem.item.itemId}" value="${cartItem.quantity}">
 
                         </td>
                         <td><fmt:formatNumber value="${cartItem.item.listPrice}"
