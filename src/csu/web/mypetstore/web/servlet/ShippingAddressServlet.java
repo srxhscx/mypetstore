@@ -51,8 +51,6 @@ public class ShippingAddressServlet extends HttpServlet {
 
         session.setAttribute("order", order);
 
-        Account account = (Account)session.getAttribute("account");
-
         request.getRequestDispatcher(CONFIRM_ORDER_FORM).forward(request, response);
     }
 }

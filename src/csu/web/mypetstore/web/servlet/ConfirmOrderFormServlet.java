@@ -24,7 +24,7 @@ public class ConfirmOrderFormServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         order = (Order)session.getAttribute("order");
-        Account account = (Account)session.getAttribute("account");
+//        Account account = (Account)session.getAttribute("account");
 
         if (shippingAddressRequired == null){
             request.getRequestDispatcher(CONFIRM_ORDER_FORM).forward(request, response);

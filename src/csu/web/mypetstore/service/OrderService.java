@@ -8,6 +8,9 @@ import csu.web.mypetstore.persistence.ItemDAO;
 import csu.web.mypetstore.persistence.LineItemDAO;
 import csu.web.mypetstore.persistence.OrderDAO;
 import csu.web.mypetstore.persistence.SequenceDAO;
+import csu.web.mypetstore.persistence.impl.ItemDaoImpl;
+import csu.web.mypetstore.persistence.impl.LineItemDAOimpl;
+import csu.web.mypetstore.persistence.impl.OrderDAOimpl;
 import csu.web.mypetstore.persistence.impl.SequenceDAOimpl;
 
 
@@ -30,12 +33,16 @@ public class OrderService {
     private LineItemDAO lineItemDAO;
 
 
+
     public void insertOrder(Order order) throws SQLException {
+        itemDAO = new ItemDaoImpl();
+        orderDAO = new OrderDAOimpl();
+        lineItemDAO = new LineItemDAOimpl();
         order.setOrderId(getNextId("ordernum"));
         for (int i = 0; i < order.getLineItems().size(); i++) {
             LineItem lineItem = (LineItem) order.getLineItems().get(i);
             String itemId = lineItem.getItemId();
-            Integer increment = new Integer(lineItem.getQuantity());
+            Integer increment = lineItem.getQuantity();
             Map<String, Object> param = new HashMap<String, Object>(2);
             param.put("itemId", itemId);
             param.put("increment", increment);

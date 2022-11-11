@@ -51,10 +51,10 @@ public class ItemDaoImpl implements ItemDAO {
             Connection connection = DBUtil.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_INVENTORY_QUANTITY);
             String itemId = param.keySet().iterator().next();
-            Integer increment = (Integer) param.get(itemId);
-            preparedStatement.setInt(1,increment.intValue());
+            String increment =(String) param.get(itemId);
+            preparedStatement.setString(1,increment);
             preparedStatement.setString(2,itemId);
-            preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
             preparedStatement.close();
             connection.close();
         }catch (Exception e){

@@ -77,7 +77,7 @@ public class OrderDAOimpl implements OrderDAO {
             "(ORDERID, USERID, ORDERDATE, SHIPADDR1, SHIPADDR2, SHIPCITY, SHIPSTATE," +
             " SHIPZIP, SHIPCOUNTRY, BILLADDR1, BILLADDR2, BILLCITY, BILLSTATE," +
             " BILLZIP, BILLCOUNTRY, COURIER, TOTALPRICE, BILLTOFIRSTNAME, BILLTOLASTNAME, " +
-            " SHIPTOFIRSTNAME, SHIPTOLASTNAME,  CREDITCARD, EXPRDATE, CARDTYPE, LOCALE)" +
+            " SHIPTOFIRSTNAME, SHIPTOLASTNAME, CREDITCARD, EXPRDATE, CARDTYPE, LOCALE)" +
             " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String insertOrderStatusString = "INSERT INTO ORDERSTATUS " +
             "(ORDERID, LINENUM, TIMESTAMP, STATUS) VALUES (?, ?, ?, ?)";
@@ -186,7 +186,7 @@ public class OrderDAOimpl implements OrderDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(insertOrderString);
             preparedStatement.setInt(1, order.getOrderId());
             preparedStatement.setString(2, order.getUsername());
-            preparedStatement.setDate(3, (Date) order.getOrderDate());
+            preparedStatement.setDate(3, order.getOrderDate());
             preparedStatement.setString(4, order.getShipAddress1());
             preparedStatement.setString(5, order.getShipAddress2());
             preparedStatement.setString(6, order.getShipCity());
@@ -209,7 +209,6 @@ public class OrderDAOimpl implements OrderDAO {
             preparedStatement.setString(23, order.getExpiryDate());
             preparedStatement.setString(24, order.getCardType());
             preparedStatement.setString(25, order.getLocale());
-
             preparedStatement.executeUpdate();
             DBUtil.closePreparedStatent(preparedStatement);
             DBUtil.closeConnection(connection);
@@ -225,7 +224,7 @@ public class OrderDAOimpl implements OrderDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(insertOrderStatusString);
             preparedStatement.setInt(1, order.getOrderId());
             preparedStatement.setInt(2, order.getOrderId());
-            preparedStatement.setDate(3, (Date) order.getOrderDate());
+            preparedStatement.setDate(3, order.getOrderDate());
             preparedStatement.setString(4, order.getStatus());
 
             preparedStatement.executeUpdate();

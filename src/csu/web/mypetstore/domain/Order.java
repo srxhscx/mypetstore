@@ -3,7 +3,7 @@ package csu.web.mypetstore.domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -258,7 +258,7 @@ public class Order implements Serializable {
     public void initOrder(Account account, Cart cart) {
 
         username = account.getUsername();
-        orderDate = new Date();
+        orderDate = new Date(System.currentTimeMillis());
 
         shipToFirstName = account.getFirstName();
         shipToLastName = account.getLastName();

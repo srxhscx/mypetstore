@@ -29,5 +29,6 @@ public class ShippingFormServlet extends HttpServlet {
 //        } else{
 //            request.getRequestDispatcher(SHIPPING_FORM).forward(request, response);
 //        }
+
     }
 }
