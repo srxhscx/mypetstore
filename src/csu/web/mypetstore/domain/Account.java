@@ -25,8 +25,14 @@ public class Account implements Serializable {
     private boolean bannerOption;
     private String bannerName;
 
+    private String repeatedPassword;
+
     public Account() {
     }
+
+    public String getRepeatedPassword() { return this.repeatedPassword; }
+
+    public void setRepeatedPassword(String repeatedPassword) { this.repeatedPassword = repeatedPassword; }
 
     public String getUsername() {
         return this.username;

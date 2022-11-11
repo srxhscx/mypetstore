@@ -29,7 +29,7 @@
             <tr>
                 <td>Repeat password:</td>
                 <td>
-                    <input type="password" value="${sessionScope.loginAccount.password}" name="repeatPassword">
+                    <input type="password" value="${sessionScope.loginAccount.repeatedPassword}" name="repeatPassword">
                 </td>
             </tr>
 
@@ -40,11 +40,5 @@
         <input type="submit" value="Save Account Information">
 
     </form>
-
-    <a href="">My Orders</a>
-    此处加一下购物车的链接
-<%--        <stripes:link--%>
-<%--        beanclass="org.mybatis.jpetstore.web.actions.OrderActionBean"--%>
-<%--        event="listOrders">My Orders</stripes:link></div>--%>
 
 <%@ include file="../common/bottom.jsp"%>

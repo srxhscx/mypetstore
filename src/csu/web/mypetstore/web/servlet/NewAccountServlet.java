@@ -32,13 +32,18 @@ public class NewAccountServlet extends HttpServlet {
     private String Country;
     private String languagePreference;
     private String favouriteCategoryId;
-    private boolean listOption=false;
-    private boolean bannerOption=false;
+    private boolean listOption;
+    private boolean bannerOption;
 
     private String message;
 
+    private String emailCode;
+    private String emailCaptcha = "";
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.emailCode =(String) req.getSession().getAttribute("EmailCode");
+        this.emailCaptcha = req.getParameter("emailCaptcha");
         this.username = req.getParameter("username");
         this.password = req.getParameter("password");
         this.repeatedPassword = req.getParameter("repeatedPassword");
@@ -54,23 +59,31 @@ public class NewAccountServlet extends HttpServlet {
         this.Country = req.getParameter("country");
         this.languagePreference = req.getParameter("languagePreference");
         this.favouriteCategoryId = req.getParameter("favouriteCategoryId");
+        if(req.getParameter("listOption") != null && req.getParameter("listOption").equals("1")){
+                this.listOption = true;
+        }else {
+            this.bannerOption = false;
+        }
+        if(req.getParameter("bannerOption") != null && req.getParameter("bannerOption").equals("1")){
+            this.bannerOption = true;
+        }else {
+            this.bannerOption = false;
+        }
+        Account newAccount;
+        newAccount = this.getAccount();
         if(!validate()){
             req.setAttribute("NewAccountMSG",this.message);
+            req.getSession().setAttribute("errorAccount",newAccount);
             req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
         }else{
-            if(req.getParameter("listOption").equals("1")){
-                this.listOption = true;
-            }
-            if(req.getParameter("bannerOption").equals("1")){
-                this.bannerOption = true;
-            }
             AccountService accountService = new AccountService();
-            Account newAccount;
-            newAccount = this.getAccount();
             accountService.insertAccount(newAccount);
             req.getSession().setAttribute("password",this.password);
             req.getSession().setAttribute("username",this.username);
-            resp.sendRedirect("signOn");
+            newAccount.setRepeatedPassword("");
+            newAccount.setPassword("");
+            req.getSession().setAttribute("loginAccount",newAccount);
+            resp.sendRedirect("mainForm");
         }
     }
 
@@ -94,6 +107,7 @@ public class NewAccountServlet extends HttpServlet {
         account.setCity(this.City);
         account.setBannerName("<image src=\"images/banner_"+this.favouriteCategoryId.toLowerCase()+".gif\">");
         account.setStatus("OK");
+        account.setRepeatedPassword(repeatedPassword);
         return account;
     }
 
@@ -168,6 +182,14 @@ public class NewAccountServlet extends HttpServlet {
         }
         if (this.favouriteCategoryId == null || this.favouriteCategoryId == ""){
             message = "请输入您的动物偏好";
+            return false;
+        }
+        if (this.emailCaptcha == null ||this.emailCaptcha == ""){
+            message = "请输入验证码";
+            return false;
+        }
+        if (!this.emailCode.equals(emailCaptcha)){
+            message = "验证码输入错误";
             return false;
         }
         return true;

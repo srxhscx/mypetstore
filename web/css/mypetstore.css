@@ -376,13 +376,24 @@ body>#Banner {
     width: 48%;
     height: 350px;
     overflow: hidden;
+    position: relative;
+}
+#card1 h2{
+    position: absolute;
+    color: #ffffff;
+    top:75%;
+    left:5%;
+    font-size: 35px;
 }
 #card1 img{
+    position: absolute;
     width:100%;
     transition: all 0.5s;
 }
 #card1 img:hover{
     transform: scale(1.1);
+
+
 }
 #card2{
     margin-left:1%;
@@ -392,8 +403,17 @@ body>#Banner {
     width: 40%;
     height: 350px;
     overflow: hidden;
+    position: relative;
+}
+#card2 h2{
+    position: absolute;
+    color: white;
+    top:75%;
+    left:5%;
+    font-size: 35px;
 }
 #card2 img{
+    position: absolute;
     width:100%;
     transition: all 0.5s;
 }
@@ -408,8 +428,17 @@ body>#Banner {
     width: 35%;
     height: 350px;
     overflow: hidden;
+    position: relative;
+}
+#card3 h2{
+    position: absolute;
+    color: white;
+    top:75%;
+    left:5%;
+    font-size: 35px;
 }
 #card3 img{
+    position: absolute;
     width:100%;
     transition: all 0.5s;
 }
@@ -424,8 +453,17 @@ body>#Banner {
     width: 53%;
     height: 350px;
     overflow: hidden;
+    position: relative;
+}
+#card4 h2{
+    position: absolute;
+    color: white;
+    top:75%;
+    left:5%;
+    font-size: 35px;
 }
 #card4 img{
+    position: absolute;
     width:100%;
     transition: all 0.5s;
 }
