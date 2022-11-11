@@ -8,7 +8,7 @@
           <element id="module-output" name="mypetstore" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="javax.mail" />
+          <element id="library" level="project" name="validation-api-2.0.1.Final" />
         </element>
       </element>
     </root>
