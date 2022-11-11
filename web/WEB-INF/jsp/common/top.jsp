@@ -8,6 +8,7 @@
 <head>
     <title>MyPetStore</title>
     <link rel="StyleSheet" href="css/mypetstore.css" type="text/css" media="screen" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 </head>
 
 <body>
@@ -37,6 +38,8 @@
             </div>
         </div>
 
+
+
         <div id="Search">
             <div id="SearchContent">
                 <form action="" method="post">
@@ -45,6 +48,8 @@
                 </form>
             </div>
         </div>
+
+
 
         <div id="QuickLinks">
             <br /> <br /> <br /> <br /><br />

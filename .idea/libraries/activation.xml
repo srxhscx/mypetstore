@@ -1,7 +1,16 @@
 <component name="libraryTable">
   <library name="activation">
     <CLASSES>
-      <root url="jar://D:/java/jar/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../java/jar/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../activation-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javax.mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javax.mail-api-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../javax.servlet-api-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jsp-api-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../mysql-connector-java-8.0.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../stripes-1.5.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

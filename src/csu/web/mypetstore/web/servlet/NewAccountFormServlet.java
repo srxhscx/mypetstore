@@ -64,7 +64,7 @@ public class NewAccountFormServlet extends HttpServlet {
         }
         Account newAccount;
         newAccount = this.getAccount();
-        req.getSession().setAttribute("errorAccount",newAccount);
+        req.getSession().setAttribute("loginAccount",newAccount);
         req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
     }
 
