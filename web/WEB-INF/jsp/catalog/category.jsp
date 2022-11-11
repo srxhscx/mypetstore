@@ -12,7 +12,6 @@
         <tr>
             <th>Product ID</th>
             <th>Name</th>
-            <th>description</th>
         </tr>
         <c:forEach var="product" items="${sessionScope.productList}">
             <tr>
@@ -20,13 +19,11 @@
                     <a href="productForm?productId=${product.productId}">${product.productId}</a>
                 </td>
                 <td>${product.name}</td>
-                <td>${product.description}</td>
             </tr>
         </c:forEach>
     </table>
 
 </div>
-
 
 <%@ include file="../common/bottom.jsp"%>
 

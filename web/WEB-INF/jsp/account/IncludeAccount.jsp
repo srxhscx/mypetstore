@@ -1,4 +1,3 @@
-<link rel="stylesheet" href=css/loginon.css>
 <%@ taglib prefix="stripes" uri="http://stripes.sourceforge.net/stripes-dynattr.tld" %>
 <h3>Account Information</h3>
 

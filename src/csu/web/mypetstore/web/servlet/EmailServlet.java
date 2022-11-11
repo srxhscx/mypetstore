@@ -91,6 +91,7 @@ public class EmailServlet extends HttpServlet {
      */
     public MimeMessage createSimpleMail(Session session) throws Exception {
         //  获取6为随机验证码
+        stringBuilder = "";
         String[] letters = new String[] {
                 "q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m",
                 "A","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M",

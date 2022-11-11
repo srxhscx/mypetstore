@@ -9,6 +9,7 @@ body {
 
 pre {
     font-family: "Courier New", Courier, mono;
+
     font-style: normal;
     background-color: #FFFFFF;
     white-space: pre
@@ -113,7 +114,7 @@ a.Button:hover {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #cOcOc0;
+    background-color: #000;
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
@@ -134,7 +135,7 @@ body>#Logo {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #cOcOc0;
+    background-color: #000;
     color: #eaac00;
     text-decoration: none;
     font-family: helvetica, tahoma, arial, verdana, sans-serif;
@@ -163,10 +164,10 @@ body>#Menu {
     padding: 0ex 0ex 0ex 0ex;
     border-width: 0ex 0ex .3ex 0px;
     border-style: solid;
-    border-color: #cOcOc0;
+    border-color: #ccc;
     float: left;
     text-align: center;
-    background-color: #cOcOc0;
+    background-color: #000;
     color: #eaac00;
     line-height: 9ex;
     voice-family: "\"}\"";
@@ -182,7 +183,7 @@ body>#Search {
     border-width: .1ex .1ex .1ex .1ex;
     border-style: solid;
     border-color: #aaa;
-    background-color: #cOcOc0;
+    background-color: #666;
     color: #eaac00;
 }
 
@@ -204,7 +205,7 @@ body>#Search {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #cOcOc0;
+    background-color: #000;
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
@@ -225,7 +226,7 @@ body>#PoweredBy {
     border-style: solid;
     border-color: #ccc;
     float: left;
-    background-color: #cOcOc0;
+    background-color: #000;
     color: #fff;
     line-height: 9ex;
     voice-family: "\"}\"";
@@ -271,30 +272,6 @@ body>#Banner {
     height: 600px;
     overflow: hidden;
 }
-
-#photo {
-    width: 4500px;
-    animation: switch 7s ease-out infinite;
-}
-
-#photo > img {
-    float: left;
-    width: 1500px;
-    height: 800px;
-}
-
-@keyframes switch {
-    0%, 25% {
-        margin-left: 0;
-    }
-    35%, 60% {
-        margin-left: -1500px;
-    }
-    70%, 100% {
-        margin-left: -3000px;
-    }
-}
-
 
 #photo {
     width: 400%;
@@ -493,7 +470,4 @@ body>#Banner {
 #card4 img:hover{
     transform: scale(1.1);
 }
-
-
-
 

@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="activation">
+  <library name="standard">
     <CLASSES>
-      <root url="jar://D:/java/jar/activation.jar!/" />
+      <root url="jar://D:/java/jar/standard.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

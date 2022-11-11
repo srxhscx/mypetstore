@@ -1,5 +1,4 @@
 <%@ include file="../common/top.jsp"%>
-<link rel="stylesheet" href=css/loginon.css>
 
 <div id="Catalog">
     <form action="editeAccount" method="post">

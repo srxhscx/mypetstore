@@ -1,13 +1,17 @@
 package csu.web.mypetstore.web.servlet;
 
 import csu.web.mypetstore.domain.Account;
+import csu.web.mypetstore.domain.Product;
 import csu.web.mypetstore.service.AccountService;
+import csu.web.mypetstore.service.CatalogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 public class NewAccountServlet extends HttpServlet {
 
@@ -39,14 +43,7 @@ public class NewAccountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.emailCode =(String) req.getSession().getAttribute("EmailCode");
-        this.emailCode = req.getParameter("emailCaptcha");
-        System.out.println("测试");
-        System.out.println("测试");
-        System.out.println("一"+this.emailCode+"二"+emailCaptcha);
-        System.out.println("测试");
-        System.out.println("测试");
-        System.out.println("测试");
-        System.out.println("测试");
+        this.emailCaptcha = req.getParameter("emailCaptcha");
         this.username = req.getParameter("username");
         this.password = req.getParameter("password");
         this.repeatedPassword = req.getParameter("repeatedPassword");
@@ -76,13 +73,16 @@ public class NewAccountServlet extends HttpServlet {
         newAccount = this.getAccount();
         if(!validate()){
             req.setAttribute("NewAccountMSG",this.message);
-            req.getSession().setAttribute("loginAccount",newAccount);
+            req.getSession().setAttribute("errorAccount",newAccount);
             req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
         }else{
             AccountService accountService = new AccountService();
             accountService.insertAccount(newAccount);
             req.getSession().setAttribute("password",this.password);
             req.getSession().setAttribute("username",this.username);
+            newAccount.setRepeatedPassword("");
+            newAccount.setPassword("");
+            req.getSession().setAttribute("loginAccount",newAccount);
             resp.sendRedirect("mainForm");
         }
     }
