@@ -17,7 +17,7 @@ import java.util.Properties;
 public class EmailServlet extends HttpServlet {
 
     String stringBuilder ="";
-    String Email;
+    String Email = "";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,61 +25,63 @@ public class EmailServlet extends HttpServlet {
         if (!this.Email.matches("[\\w]+@[\\w]+.[\\w]+[\\w]")) {
             req.getSession().setAttribute("EmailCode",stringBuilder);
             req.getRequestDispatcher("NewAccountForm").forward(req, resp);
+        }else{
+            Properties prop = new Properties();
+            // 开启debug调试，以便在控制台查看
+            prop.setProperty("mail.debug", "true");
+            // 设置邮件服务器主机名
+            prop.setProperty("mail.host", "smtp.qq.com");
+            // 发送服务器需要身份验证
+            prop.setProperty("mail.smtp.auth", "true");
+            // 发送邮件协议名称
+            prop.setProperty("mail.transport.protocol", "smtp");
+            // 开启SSL加密，否则会失败
+            MailSSLSocketFactory sf = null;
+            try {
+                sf = new MailSSLSocketFactory();
+            } catch (GeneralSecurityException e) {
+                e.printStackTrace();
+            }
+            sf.setTrustAllHosts(true);
+            prop.put("mail.smtp.ssl.enable", "true");
+            prop.put("mail.smtp.ssl.socketFactory", sf);
+            // 创建session
+            Session session = Session.getInstance(prop);
+            // 通过session得到transport对象
+            Transport ts = null;
+            try {
+                ts = session.getTransport();
+            } catch (NoSuchProviderException e) {
+                e.printStackTrace();
+            }
+            // 连接邮件服务器：邮箱类型，帐号，POP3/SMTP协议授权码 163使用：smtp.163.com
+            try {
+                ts.connect("smtp.qq.com", "3413637036", "drebdxclheimcica");
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+            // 创建邮件
+            Message message = null;
+            try {
+                message = createSimpleMail(session);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            // 发送邮件
+            try {
+                ts.sendMessage(message, message.getAllRecipients());
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+            try {
+                ts.close();
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+            req.getSession().setAttribute("EmailCode",stringBuilder);
+            req.getRequestDispatcher("NewAccountForm").forward(req, resp);
         }
-        Properties prop = new Properties();
-        // 开启debug调试，以便在控制台查看
-        prop.setProperty("mail.debug", "true");
-        // 设置邮件服务器主机名
-        prop.setProperty("mail.host", "smtp.qq.com");
-        // 发送服务器需要身份验证
-        prop.setProperty("mail.smtp.auth", "true");
-        // 发送邮件协议名称
-        prop.setProperty("mail.transport.protocol", "smtp");
-        // 开启SSL加密，否则会失败
-        MailSSLSocketFactory sf = null;
-        try {
-            sf = new MailSSLSocketFactory();
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        }
-        sf.setTrustAllHosts(true);
-        prop.put("mail.smtp.ssl.enable", "true");
-        prop.put("mail.smtp.ssl.socketFactory", sf);
-        // 创建session
-        Session session = Session.getInstance(prop);
-        // 通过session得到transport对象
-        Transport ts = null;
-        try {
-            ts = session.getTransport();
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
-        }
-        // 连接邮件服务器：邮箱类型，帐号，POP3/SMTP协议授权码 163使用：smtp.163.com
-        try {
-            ts.connect("smtp.qq.com", "3413637036", "drebdxclheimcica");
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-        // 创建邮件
-        Message message = null;
-        try {
-            message = createSimpleMail(session);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        // 发送邮件
-        try {
-            ts.sendMessage(message, message.getAllRecipients());
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-        try {
-            ts.close();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-        req.getSession().setAttribute("EmailCode",stringBuilder);
-        req.getRequestDispatcher("NewAccountForm").forward(req, resp);
+
     }
 
 

@@ -72,8 +72,8 @@
         <td>
             <label>
                 <select name="languagePreference">
-                    <option value="english">English</option>
-                    <option value="chinese">Chinese</option>
+                    <option value="english" <c:if test="${sessionScope.loginAccount.languagePreference.equals(\"english\")}">selected</c:if>>English</option>
+                    <option value="chinese" <c:if test="${sessionScope.loginAccount.languagePreference.equals(\"chinese\")}">selected</c:if>>Chinese</option>
                 </select>
             </label>
         </td>
@@ -83,11 +83,11 @@
         <td>
             <label>
                 <select name="favouriteCategoryId">
-                    <option value="FISH">Fish</option>
-                    <option value="DOGS">Dogs</option>
-                    <option value="REPTILES">Reptiles</option>
-                    <option value="CATS">Cats</option>
-                    <option value="BIRDS">Birds</option>
+                    <option value="FISH" <c:if test="${sessionScope.loginAccount.favouriteCategoryId.equals(\"FISH\")}">selected</c:if>>Fish</option>
+                    <option value="DOGS" <c:if test="${sessionScope.loginAccount.favouriteCategoryId.equals(\"DOGS\")}">selected</c:if>>Dogs</option>
+                    <option value="REPTILES" <c:if test="${sessionScope.loginAccount.favouriteCategoryId.equals(\"REPTILES\")}">selected</c:if>>Reptiles</option>
+                    <option value="CATS" <c:if test="${sessionScope.loginAccount.favouriteCategoryId.equals(\"CATS\")}">selected</c:if>>Cats</option>
+                    <option value="BIRDS" <c:if test="${sessionScope.loginAccount.favouriteCategoryId.equals(\"BIRDS\")}">selected</c:if>>Birds</option>
                 </select>
             </label>
         </td>
@@ -97,8 +97,8 @@
         <td>Enable MyList</td>
         <td>
             <label>
-                <input type="radio" name="listOption" value="1">yes
-                <input type="radio" name="listOption" value="0">no
+                <input type="radio" name="listOption" value="1" <c:if test="${sessionScope.loginAccount.listOption}">checked</c:if>>yes
+                <input type="radio" name="listOption" value="0" <c:if test="${!sessionScope.loginAccount.listOption}">checked</c:if>>no
             </label>
         </td>
     </tr>
@@ -106,8 +106,8 @@
         <td>Enable MyBanner</td>
         <td>
             <label>
-                <input type="radio" name="bannerOption" value="1">yes
-                <input type="radio" name="bannerOption" value="0">no
+                <input type="radio" name="bannerOption" value="1" <c:if test="${sessionScope.loginAccount.bannerOption}">checked</c:if>>yes
+                <input type="radio" name="bannerOption" value="0" <c:if test="${!sessionScope.loginAccount.bannerOption}">checked</c:if>>no
             </label>
         </td>
     </tr>

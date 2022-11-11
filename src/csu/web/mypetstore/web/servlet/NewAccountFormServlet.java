@@ -65,6 +65,11 @@ public class NewAccountFormServlet extends HttpServlet {
         Account newAccount;
         newAccount = this.getAccount();
         req.getSession().setAttribute("errorAccount",newAccount);
+        if(req.getSession().getAttribute("EmailCode").equals("")){
+            req.setAttribute("NewAccountMSG","邮箱格式错误");
+        }else{
+            req.setAttribute("NewAccountMSG","");
+        }
         req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
     }
 

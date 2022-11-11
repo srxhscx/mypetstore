@@ -79,6 +79,8 @@ public class EditeAccountServlet extends HttpServlet {
             System.out.println(req.getParameter("bannerOption"));
             AccountService accountService = new AccountService();
             accountService.updateAccount(oldAccount);
+            oldAccount.setPassword("");
+            oldAccount.setRepeatedPassword("");
             httpsession.setAttribute("loginAccount", oldAccount);
             resp.sendRedirect("mainForm");
         }
@@ -103,44 +105,74 @@ public class EditeAccountServlet extends HttpServlet {
                 oldAccount.setPassword(password);
             }
         }
-        if (this.firstName != null && !this.firstName.equals("") && !this.firstName.equals(oldAccount.getFirstName())){
+        if(this.firstName == null || this.firstName.equals("")){
+            message = "firstName不能为空";
+            return false;
+        }else {
             oldAccount.setFirstName(firstName);
         }
-        if (this.lastName != null && !this.lastName.equals("") && !this.lastName.equals(oldAccount.getLastName())){
+        if(this.lastName == null || this.lastName.equals("")){
+            message = "lastName不能为空";
+            return false;
+        }else {
             oldAccount.setLastName(lastName);
         }
-        if (this.Email != null && !this.Email.equals("") && !this.Email.equals(oldAccount.getEmail())){
+        if (this.Email != null && !this.Email.equals("")){
             if (!this.Email.matches("[\\w]+@[\\w]+.[\\w]+[\\w]")) {
                 message = "请输入有效的邮箱地址";
                 return false;
             }else{
                 oldAccount.setEmail(Email);
             }
+        } else {
+            message = "邮箱不能为空";
+            return false;
         }
-        if (this.Phone != null && !this.Phone.equals("") && !this.Phone.equals(oldAccount.getPhone())){
+        if (this.Phone != null && !this.Phone.equals("")){
             if (!this.Phone.matches("^([0-9]{3}-?[0-9]{8}|[0-9]{4}-?[0-9]{7})$")){
                 message = "请输入有效的电话号码";
                 return false;
             }else{
                 oldAccount.setPhone(Phone);
             }
+        }else{
+            message = "电话不能为空";
+            return false;
         }
-        if (this.address1 != null && !this.address1.equals("") && !this.address1.equals(oldAccount.getAddress1())){
+        if(this.address1 == null || this.address1.equals("")){
+            message = "地址一不能为空";
+            return false;
+        }else {
             oldAccount.setAddress1(address1);
         }
-        if (this.address2 != null && !this.address2.equals("") && !this.address2.equals(oldAccount.getAddress2())){
+        if(this.address2 == null || this.address2.equals("")){
+            message = "地址二不能为空";
+            return false;
+        }else {
             oldAccount.setAddress2(address2);
         }
-        if (this.City != null && !this.City.equals("") && !this.City.equals(oldAccount.getCity())){
+        if(this.City == null || this.City.equals("")){
+            message = "City不能为空";
+            return false;
+        }else {
             oldAccount.setCity(City);
         }
-        if (this.State != null && !this.State.equals("") && !this.State.equals(oldAccount.getState())){
+        if(this.State == null || this.State.equals("")){
+            message = "State不能为空";
+            return false;
+        }else {
             oldAccount.setState(State);
         }
-        if (this.Zip != null && !this.Zip.equals("") && !this.Zip.equals(oldAccount.getZip())){
+        if(this.Zip == null || this.Zip.equals("")){
+            message = "Zip不能为空";
+            return false;
+        }else {
             oldAccount.setZip(Zip);
         }
-        if (this.Country != null && !this.Country.equals("") && !this.Country.equals(oldAccount.getCountry())){
+        if(this.Country == null || this.Country.equals("")){
+            message = "Country不能为空";
+            return false;
+        }else {
             oldAccount.setCountry(Country);
         }
         if (this.languagePreference != null && !this.languagePreference.equals("") && !this.languagePreference.equals(oldAccount.getLanguagePreference())){
