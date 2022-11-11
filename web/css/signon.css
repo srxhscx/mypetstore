@@ -1,0 +1,22 @@
+<style type="text/css">
+        .center{
+            text-align:center;
+            margin-top: 50px;
+        }
+        .fon{
+            font-size: 40px;
+        }
+        .fon1{
+            font-size: 20px;
+        }
+        body{
+            background-color:#cOcOc0;
+            background-size: 100% 100%;
+        }
+        input {
+            background-color: transparent;
+            outline: none;
+            color: black;
+        }
+
+</style>

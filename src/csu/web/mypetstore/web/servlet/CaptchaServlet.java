@@ -19,7 +19,7 @@ public class CaptchaServlet extends HttpServlet {
         //这个方法实现验证码的生成
         BufferedImage bi=new BufferedImage(68, 22,BufferedImage.TYPE_INT_RGB);//创建图像缓冲区
         Graphics g=bi.getGraphics(); //通过缓冲区创建一个画布
-        Color c=new Color(200,150,255); //创建颜色
+        Color c=new Color(145, 145, 145, 87); //创建颜色
         /*根据背景画了一个矩形框
          */
         g.setColor(c);//为画布创建背景颜色
