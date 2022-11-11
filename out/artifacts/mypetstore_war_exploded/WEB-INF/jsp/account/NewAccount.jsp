@@ -10,26 +10,25 @@
             <tr>
                 <td>User ID:</td>
                 <td><label>
-                    <input type="text" name="username">
+                    <input type="text" name="username" value="${sessionScope.loginAccount.username}">
                 </label></td>
             </tr>
             <tr>
                 <td>New password:</td>
                 <td><label>
-                    <input type="password" name="password">
+                    <input type="password" name="password" value="${sessionScope.loginAccount.password}">
                 </label></td>
             </tr>
             <tr>
                 <td>Repeat password:</td>
                 <td><label>
-                    <input type="password" name="repeatedPassword">
+                    <input type="password" name="repeatedPassword" value="${sessionScope.loginAccount.repeatedPassword}">
                 </label></td>
             </tr>
         </table>
 
     <%@ include file="IncludeAccount.jsp"%>
 
-        <table>
             <tr>
                 <td>Emain captcha:</td>
                 <td><label>
@@ -39,7 +38,7 @@
                     <button formaction="Email" formmethod="post"><font>get Email</font></button>
                 </td>
             </tr>
-        </table>
+
         <input type="submit" name="newAccount">
 
     </form>

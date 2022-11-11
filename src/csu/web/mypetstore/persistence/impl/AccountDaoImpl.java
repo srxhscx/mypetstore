@@ -99,8 +99,8 @@ public class AccountDaoImpl implements AccountDAO {
                     "    WHERE USERID = ? ";
 
     private static final String UPDATE_SIGNON =
-            "INSERT INTO SIGNON (PASSWORD,USERNAME)\n" +
-                    "    VALUES (?, ?)";
+            "UPDATE SIGNON SET PASSWORD = ?\n" +
+                    "    WHERE USERNAME = ?";
 
     private Account resultSetToAccount(ResultSet resultSet) throws Exception{
         Account account = new Account();

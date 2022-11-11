@@ -12,6 +12,7 @@
           <element id="library" level="project" name="standard" />
           <element id="library" level="project" name="mysql-connector-java-8.0.30" />
           <element id="library" level="project" name="javax.mail" />
+          <element id="library" level="project" name="activation" />
         </element>
       </element>
     </root>
