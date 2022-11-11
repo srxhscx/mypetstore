@@ -12,11 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author RongXing 1360908370@qq.com
- * @version 2022/11/1 13:23
- * @ since JDK11
- */
+
 public class ItemDaoImpl implements ItemDAO {
 
     private static final String GET_ITEM_LIST_BY_PRODUCT = "SELECT I.ITEMID,LISTPRICE,UNITCOST,SUPPLIER AS supplierId," +

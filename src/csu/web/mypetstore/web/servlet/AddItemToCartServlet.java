@@ -22,31 +22,31 @@ public class AddItemToCartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String workingItemId = req.getParameter("workingItemId");
+        //String workingItemId = req.getParameter("workingItemId");
 
         HttpSession session = req.getSession();
+
         Cart cart = (Cart) session.getAttribute("cart");
+        String workingItemId = (String) session.getAttribute("add");
 
         if (cart == null) {
             cart = new Cart();
         }
+        if(workingItemId != null){
+            if (cart.containsItemId(workingItemId)) {
 
-        if (cart.containsItemId(workingItemId)) {
-            CatalogService catalogService = new CatalogService();
-            boolean isInStock = catalogService.isItemInStock(workingItemId);
-            if(!isInStock)
-            {
                 cart.incrementQuantityByItemId(workingItemId);
-            }
 
-
-        } else {
-            CatalogService catalogService = new CatalogService();
-            boolean isInStock = catalogService.isItemInStock(workingItemId);
-            Item item = catalogService.getItem(workingItemId);
+            } else {
+                CatalogService catalogService = new CatalogService();
+                boolean isInStock = catalogService.isItemInStock(workingItemId);
+                Item item = catalogService.getItem(workingItemId);
                 cart.addItem(item, isInStock);
 
+            }
         }
+
+        session.setAttribute("add",null);
         session.setAttribute("cart",cart);
         req.getRequestDispatcher(CART_FORM).forward(req,resp);
 

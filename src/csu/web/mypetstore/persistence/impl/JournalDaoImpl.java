@@ -24,6 +24,5 @@ public class JournalDaoImpl implements JournalDAO {
         connection.close();
 
 
-        connection.close();
     }
 }

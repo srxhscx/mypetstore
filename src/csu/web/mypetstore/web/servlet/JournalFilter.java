@@ -6,6 +6,7 @@ import csu.web.mypetstore.domain.Journal;
 import csu.web.mypetstore.persistence.JournalDAO;
 import csu.web.mypetstore.persistence.impl.JournalDaoImpl;
 
+import javax.imageio.spi.ServiceRegistry;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -45,8 +46,10 @@ public class JournalFilter implements Filter {
         }
         chain.doFilter(req,resp);
     }
-    public void destroy(){
-        /* 在 Filter 实例被 Web 容器从服务移除之前调用 */
+
+    @Override
+    public void destroy() {
+
     }
 
 }
