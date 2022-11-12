@@ -35,12 +35,15 @@ public class EmailServlet extends HttpServlet {
             prop.setProperty("mail.smtp.auth", "true");
             // 发送邮件协议名称
             prop.setProperty("mail.transport.protocol", "smtp");
+
             // 开启SSL加密，否则会失败
             MailSSLSocketFactory sf = null;
             try {
                 sf = new MailSSLSocketFactory();
+                sf.setTrustAllHosts(true);
             } catch (GeneralSecurityException e) {
                 e.printStackTrace();
+                System.out.println("error1");
             }
             sf.setTrustAllHosts(true);
             prop.put("mail.smtp.ssl.enable", "true");
@@ -53,10 +56,11 @@ public class EmailServlet extends HttpServlet {
                 ts = session.getTransport();
             } catch (NoSuchProviderException e) {
                 e.printStackTrace();
+                System.out.println("error2");
             }
             // 连接邮件服务器：邮箱类型，帐号，POP3/SMTP协议授权码 163使用：smtp.163.com
             try {
-                ts.connect("smtp.qq.com", "3413637036", "drebdxclheimcica");
+                ts.connect("smtp.qq.com", "1573152761", "jrbosgfhoyvgbadf");
             } catch (MessagingException e) {
                 e.printStackTrace();
             }
@@ -103,7 +107,7 @@ public class EmailServlet extends HttpServlet {
         // 创建邮件对象
         MimeMessage message = new MimeMessage(session);
         // 指明邮件的发件人
-        message.setFrom(new InternetAddress("3413637036@qq.com"));
+        message.setFrom(new InternetAddress("1573152761@qq.com"));
         // 指明邮件的收件人，发件人和收件人如果是一样的，那就是自己给自己发
         message.setRecipient(Message.RecipientType.TO, new InternetAddress(Email));
         // 邮件的标题
