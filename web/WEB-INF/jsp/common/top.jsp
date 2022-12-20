@@ -8,6 +8,7 @@
 <head>
     <title>MyPetStore</title>
     <link rel="StyleSheet" href="css/mypetstore.css" type="text/css" media="screen" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -40,9 +41,10 @@
         <div id="Search">
             <div id="SearchContent">
                 <form action="" method="post">
-                    <input type="text" name=name="keyword" size="14" />
-                    <input type="submit" value="Search"/>
+                    <input type="text" name=name="keyword" size="14" class="input-search" id="keyword" autocomplete="false"/>
+                    <input type="submit" value="Search" class="button-search"/>
                 </form>
+                <div id="selectedId" ><ul id="drop"></ul></div>
             </div>
         </div>
 
