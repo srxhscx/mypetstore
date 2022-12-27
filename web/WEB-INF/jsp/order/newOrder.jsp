@@ -1,7 +1,135 @@
 <%@ include file="../common/top.jsp"%>
 
 
-<div id="Catalog"><form action="conFirmOrderForm" method="post">
+<div id="Catalog">
+    <!-- 覆盖层 -->
+    <div class="login-bg"></div>
+
+    <div class="selectAddress">
+        <div class="bar">Please choose a consignee</div>
+        <span class="close">x</span>
+        <div class="addressItem">
+            <div class="address-item active">
+                <div id="firstName" class="detail">firstName</div>
+                <div id="lastName" class="detail">lastName</div>
+                <div id="address1" class="detail">address1</div>
+                <div id="address2" class="detail">address2</div>
+                <div id="city" class="detail">city</div>
+                <div id="state" class="detail">state</div>
+                <div id="zip" class="detail">zip</div>
+                <div id="country" class="detail">country</div>
+                <div class="address-operator">
+                    <span class="link">edit</span>
+                    <span class="link">delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="addressItem">
+            <div class="address-item active">
+                <div id="firstName" class="detail">firstName</div>
+                <div id="lastName" class="detail">lastName</div>
+                <div id="address1" class="detail">address1</div>
+                <div id="address2" class="detail">address2</div>
+                <div id="city" class="detail">city</div>
+                <div id="state" class="detail">state</div>
+                <div id="zip" class="detail">zip</div>
+                <div id="country" class="detail">country</div>
+                <div class="address-operator">
+                    <span class="link">edit</span>
+                    <span class="link">delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="addressItem">
+            <div class="address-item active">
+                <div id="firstName" class="detail">firstName</div>
+                <div id="lastName" class="detail">lastName</div>
+                <div id="address1" class="detail">address1</div>
+                <div id="address2" class="detail">address2</div>
+                <div id="city" class="detail">city</div>
+                <div id="state" class="detail">state</div>
+                <div id="zip" class="detail">zip</div>
+                <div id="country" class="detail">country</div>
+                <div class="address-operator">
+                    <span class="link">edit</span>
+                    <span class="link">delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="addressItem">
+            <div class="address-item active">
+                <div id="firstName" class="detail">firstName</div>
+                <div id="lastName" class="detail">lastName</div>
+                <div id="address1" class="detail">address1</div>
+                <div id="address2" class="detail">address2</div>
+                <div id="city" class="detail">city</div>
+                <div id="state" class="detail">state</div>
+                <div id="zip" class="detail">zip</div>
+                <div id="country" class="detail">country</div>
+                <div class="address-operator">
+                    <span class="link">edit</span>
+                    <span class="link">delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="addressItem">
+            <div class="address-item active">
+                <div id="firstName" class="detail">firstName</div>
+                <div id="lastName" class="detail">lastName</div>
+                <div id="address1" class="detail">address1</div>
+                <div id="address2" class="detail">address2</div>
+                <div id="city" class="detail">city</div>
+                <div id="state" class="detail">state</div>
+                <div id="zip" class="detail">zip</div>
+                <div id="country" class="detail">country</div>
+                <div class="address-operator">
+                    <span class="link">edit</span>
+                    <span class="link">delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="addressItem">
+            <div class="address-item active">
+                <div id="firstName" class="detail">firstName</div>
+                <div id="lastName" class="detail">lastName</div>
+                <div id="address1" class="detail">address1</div>
+                <div id="address2" class="detail">address2</div>
+                <div id="city" class="detail">city</div>
+                <div id="state" class="detail">state</div>
+                <div id="zip" class="detail">zip</div>
+                <div id="country" class="detail">country</div>
+                <div class="address-operator">
+                    <span class="link">edit</span>
+                    <span class="link">delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="addressItem">
+            <div class="address-item active">
+                <div id="firstName" class="detail">firstName</div>
+                <div id="lastName" class="detail">lastName</div>
+                <div id="address1" class="detail">address1</div>
+                <div id="address2" class="detail">address2</div>
+                <div id="city" class="detail">city</div>
+                <div id="state" class="detail">state</div>
+                <div id="zip" class="detail">zip</div>
+                <div id="country" class="detail">country</div>
+                <div class="address-operator">
+                    <span class="link">edit</span>
+                    <span class="link">delete</span>
+                </div>
+            </div>
+        </div>
+        <div class="addressItem">
+            <div class="add_address">
+                <i class="fa fa-plus"></i>
+                <div class="addNew">Add new consignee</div>
+            </div>
+        </div>
+    </div>
+
+
+    <form action="conFirmOrderForm" method="post">
 
 
     <table>
@@ -33,7 +161,7 @@
             <td><input type="text" name="order.expiryDate" value="12/03"></td>
         </tr>
         <tr>
-            <th colspan=2>Billing Address</th>
+            <th colspan=2>Billing Address <span class="change_address"> switch to other Address</span></th>
         </tr>
 
         <tr>

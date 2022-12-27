@@ -25,10 +25,9 @@ public class AutoCompleteServlet extends HttpServlet {
         String keyword = req.getParameter("keyword");
         CatalogService catalogService = new CatalogService();
         List<Product> productList = catalogService.searchProductList(keyword);
-        System.out.println("aaa");
+
         result = JSON.toJSONString(productList);
         //System.out.println(result);
-        System.out.println("sss");
         resp.setContentType("text/json");
         PrintWriter out = resp.getWriter();
         out.println(result);
