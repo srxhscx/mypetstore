@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="standard">
+  <library name="spring-web-4.3.6.RELEASE">
     <CLASSES>
-      <root url="jar://D:/java/jar/standard.jar!/" />
+      <root url="jar://D:/java/jar/spring-web-4.3.6.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

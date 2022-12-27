@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="jsp-api-2.0">
+  <library name="validation-api-2.0.1.Final">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../jsp-api-2.0.jar!/" />
+      <root url="jar://D:/java/jar/validation-api-2.0.1.Final.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

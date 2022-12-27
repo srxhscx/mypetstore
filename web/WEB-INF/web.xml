@@ -228,7 +228,10 @@
         <url-pattern>/viewOrder</url-pattern>
     </servlet-mapping>
 
-
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
 
 </web-app>

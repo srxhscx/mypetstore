@@ -7,24 +7,67 @@
 <div id="Catalog">
 
      <form action="signOn" method="post">
+         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+         <script>
+             $(function () {
+                 var username = $('#username');
+                 var password = $('#password');
+                 var captcha = $('#captcha');
+
+                 username.blur(function () {
+                     if(username.val() === ""){
+                         $('#UMSG').text("please input your name");
+                     }else{
+                         $('#UMSG').text("");
+                     }
+                 })
+
+                 password.blur(function () {
+                     if(password.val() === ""){
+                         $('#PMSG').text("please input your password");
+                     }else{
+                         $('#PMSG').text("");
+                     }
+                 })
+
+                 captcha.blur(function () {
+                     if(captcha.val() === ""){
+                         $('#CMSG').text("please input your captcha");
+                     }else{
+                         $('#CMSG').text("");
+                     }
+                 })
+
+                 $('#login').mouseover(function(){
+                     if(username.val() !== ""&&password.val() !== ""&&captcha.val() !== ""){
+                         $('#login').prop('disabled', true);
+                     }else{
+                         $('#login').prop('disabled', false);
+                     }
+                 })
+             })
+         </script>
+
          <p>Please enter your username and password.</p>
          <c:if test="${requestScope.signOnMsg!=null}">
-             <p><font color="red">${requestScope.signOnMsg}</font> </p>
+             <p id="errorMSG"><font color="red">${requestScope.signOnMsg}</font> </p>
          </c:if>
          <td>
-             Username:<input type="text" name="username"><br>
+             <label for="username">Username:</label><input type="text" name="username" id="username"><br>
+             <font id="UMSG"></font><br>
          </td>
          <td>
-             Password:<input type="password" name="password"><br>
+             <label for="password">Password:</label><input type="password" name="password" id="password"><br>
+             <font id="PMSG"></font><br>
          </td>
          <td>
-             Captcha:<input type="text" name="captcha">
+             <label for="captcha">Captcha:</label><input type="text" name="captcha" id="captcha">
          </td>
          <td>
              <img id="img" src="<%= request.getContextPath()%>/checkcodeServlet"/><br>
+             <font id="CMSG"></font><br>
          </td>
-         </p>
-         <input type="submit" value="login">
+         <input type="submit" value="login" id="login">
      </form>
 
     Need a user name and password?
