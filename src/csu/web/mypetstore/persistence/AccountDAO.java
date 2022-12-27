@@ -1,6 +1,7 @@
 package csu.web.mypetstore.persistence;
 
 import csu.web.mypetstore.domain.Account;
+import csu.web.mypetstore.domain.Consignee;
 
 public interface AccountDAO {
     Account getAccountByUsername(String var1);
@@ -18,4 +19,5 @@ public interface AccountDAO {
     void updateProfile(Account var1);
 
     void updateSignon(Account var1);
+
 }
