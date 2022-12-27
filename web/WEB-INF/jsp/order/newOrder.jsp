@@ -1,7 +1,153 @@
 <%@ include file="../common/top.jsp"%>
 
 
-<div id="Catalog"><form action="conFirmOrderForm" method="post">
+<div id="Catalog">
+    <!-- 覆盖层 -->
+    <div class="login-bg"></div>
+
+    <div class="selectAddress">
+        <div class="bar">Please choose a consignee</div>
+        <span class="close">x</span>
+<%--        <div class="addressItem">--%>
+<%--            <div class="address-item active">--%>
+<%--                <div name="firstName" class="detail">${sessionScope.order.billToFirstName}</div>--%>
+<%--                <div name="lastName" class="detail">${sessionScope.order.billToLastName}</div>--%>
+<%--                <div name="address1" class="detail">${sessionScope.order.billAddress1}</div>--%>
+<%--                <div name="address2" class="detail">${sessionScope.order.billAddress2}</div>--%>
+<%--                <div name="city" class="detail">${sessionScope.order.billCity}</div>--%>
+<%--                <div name="state" class="detail">${sessionScope.order.billState}</div>--%>
+<%--                <div name="zip" class="detail">${sessionScope.order.billZip}</div>--%>
+<%--                <div name="country" class="detail">${sessionScope.order.billCountry}</div>--%>
+<%--                <div class="address-operator">--%>
+<%--                    <span class="link">edit</span>--%>
+<%--                    <span class="link">delete</span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="addressItem">--%>
+<%--            <div class="address-item active">--%>
+<%--                <div name="firstName" class="detail">firstName</div>--%>
+<%--                <div name="lastName" class="detail">lastName</div>--%>
+<%--                <div name="address1" class="detail">address1</div>--%>
+<%--                <div name="address2" class="detail">address2</div>--%>
+<%--                <div name="city" class="detail">city</div>--%>
+<%--                <div name="state" class="detail">state</div>--%>
+<%--                <div name="zip" class="detail">zip</div>--%>
+<%--                <div name="country" class="detail">country</div>--%>
+<%--                <div class="address-operator">--%>
+<%--                    <span class="link">edit</span>--%>
+<%--                    <span class="link">delete</span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="addressItem">--%>
+<%--            <div class="address-item active">--%>
+<%--                <div name="firstName" class="detail">firstName</div>--%>
+<%--                <div name="lastName" class="detail">lastName</div>--%>
+<%--                <div name="address1" class="detail">address1</div>--%>
+<%--                <div name="address2" class="detail">address2</div>--%>
+<%--                <div name="city" class="detail">city</div>--%>
+<%--                <div name="state" class="detail">state</div>--%>
+<%--                <div name="zip" class="detail">zip</div>--%>
+<%--                <div name="country" class="detail">country</div>--%>
+<%--                <div class="address-operator">--%>
+<%--                    <span class="link">edit</span>--%>
+<%--                    <span class="link">delete</span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="addressItem">--%>
+<%--            <div class="address-item active">--%>
+<%--                <div name="firstName" class="detail">firstName</div>--%>
+<%--                <div name="lastName" class="detail">lastName</div>--%>
+<%--                <div name="address1" class="detail">address1</div>--%>
+<%--                <div name="address2" class="detail">address2</div>--%>
+<%--                <div name="city" class="detail">city</div>--%>
+<%--                <div name="state" class="detail">state</div>--%>
+<%--                <div name="zip" class="detail">zip</div>--%>
+<%--                <div name="country" class="detail">country</div>--%>
+<%--                <div class="address-operator">--%>
+<%--                    <span class="link">edit</span>--%>
+<%--                    <span class="link">delete</span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="addressItem">--%>
+<%--            <div class="address-item active">--%>
+<%--                <div name="firstName" class="detail">firstName</div>--%>
+<%--                <div name="lastName" class="detail">lastName</div>--%>
+<%--                <div name="address1" class="detail">address1</div>--%>
+<%--                <div name="address2" class="detail">address2</div>--%>
+<%--                <div name="city" class="detail">city</div>--%>
+<%--                <div name="state" class="detail">state</div>--%>
+<%--                <div name="zip" class="detail">zip</div>--%>
+<%--                <div name="country" class="detail">country</div>--%>
+<%--                <div class="address-operator">--%>
+<%--                    <span class="link">edit</span>--%>
+<%--                    <span class="link">delete</span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="addressItem">--%>
+<%--            <div class="address-item active">--%>
+<%--                <div name="firstName" class="detail">firstName</div>--%>
+<%--                <div name="lastName" class="detail">lastName</div>--%>
+<%--                <div name="address1" class="detail">address1</div>--%>
+<%--                <div name="address2" class="detail">address2</div>--%>
+<%--                <div name="city" class="detail">city</div>--%>
+<%--                <div name="state" class="detail">state</div>--%>
+<%--                <div name="zip" class="detail">zip</div>--%>
+<%--                <div name="country" class="detail">country</div>--%>
+<%--                <div class="address-operator">--%>
+<%--                    <span class="link">edit</span>--%>
+<%--                    <span class="link">delete</span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="addressItem">--%>
+<%--            <div class="address-item active">--%>
+<%--                <div name="firstName" class="detail">firstName</div>--%>
+<%--                <div name="lastName" class="detail">lastName</div>--%>
+<%--                <div name="address1" class="detail">address1</div>--%>
+<%--                <div name="address2" class="detail">address2</div>--%>
+<%--                <div name="city" class="detail">city</div>--%>
+<%--                <div name="state" class="detail">state</div>--%>
+<%--                <div name="zip" class="detail">zip</div>--%>
+<%--                <div name="country" class="detail">country</div>--%>
+<%--                <div class="address-operator">--%>
+<%--                    <span class="link">edit</span>--%>
+<%--                    <span class="link">delete</span>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+        <c:forEach var="consignee" items="${sessionScope.consigneeList}">
+            <div class="addressItem">
+                <div class="address-item active">
+                    <div name="firstName" class="detail">${consignee.firstName}</div>
+                    <div name="lastName" class="detail">${consignee.lastName}</div>
+                    <div name="address1" class="detail">${consignee.address1}</div>
+                    <div name="address2" class="detail">${consignee.address2}</div>
+                    <div name="city" class="detail">${consignee.city}</div>
+                    <div name="state" class="detail">${consignee.state}</div>
+                    <div name="zip" class="detail">${consignee.zip}</div>
+                    <div name="country" class="detail">${consignee.country}</div>
+                    <div class="address-operator">
+                        <span class="link">edit</span>
+                        <span class="link">delete</span>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+        <div class="addressItem">
+            <div class="add_address">
+                <i class="fa fa-plus"></i>
+                <div class="addNew">Add new consignee</div>
+            </div>
+        </div>
+    </div>
+
+
+    <form action="conFirmOrderForm" method="post">
 
 
     <table>
@@ -33,9 +179,9 @@
             <td><input type="text" name="order.expiryDate" value="12/03"></td>
         </tr>
         <tr>
-            <th colspan=2>Billing Address</th>
+            <th colspan=2>Billing Address <span class="change_address"> switch to other Address</span></th>
         </tr>
-
+<%--收货人信息--%>
         <tr>
             <td>First name:</td>
             <td><input type="text" name="order.billToFirstName" value="${sessionScope.order.billToFirstName}"></td>

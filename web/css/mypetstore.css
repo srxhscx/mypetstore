@@ -183,8 +183,28 @@ body>#Search {
     border-width: .1ex .1ex .1ex .1ex;
     border-style: solid;
     border-color: #aaa;
-    background-color: #666;
-    color: #eaac00;
+    border: 2px solid #215496;
+    outline: none;
+}
+
+.input-search {
+    height: 28px;
+    width: 195px;
+    padding: 0;
+    padding-left: 5px;
+    background-color: #fff;
+}
+
+.button-search {
+    height: 32px;
+    position: absolute;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    top: 34px;
+    right: 100px;
+    width: 70px;
+    background-color: #215496;
+    color: #fff;
 }
 
 #QuickLinks {
@@ -471,3 +491,65 @@ body>#Banner {
     transform: scale(1.1);
 }
 
+.SearchContent{
+    position: relative;
+}
+
+#selectedId {
+    position: absolute;
+    border-radius: 0 0 15px 15px;
+    padding: 0;
+    top: 64px;
+    right: 169px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #215496;
+    border-top: 1px solid #666;
+    display: none;
+}
+
+/*.hid {*/
+/*    display: none;*/
+/*}*/
+
+/*.visible {*/
+/*    display: block;*/
+/*}*/
+
+ul#drop {
+    list-style: none;
+    margin: 0;
+    /* margin-top: 10px;
+    border-top: 1px solid #ddd; */
+    padding: 0;
+}
+
+ul#drop li {
+    text-align: left;
+    height: 25px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0 5px;
+    font-size: 15px;
+}
+
+ul#drop li:hover {
+    background-color: skyblue;
+    color: white;
+    cursor: pointer;
+}
+
+.change_address{
+    float: right;
+    margin-right: 10px;
+    color: #215496;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.change_address:hover {
+    color: #666666;
+    cursor: pointer;
+}

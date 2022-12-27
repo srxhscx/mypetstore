@@ -25,6 +25,7 @@
     </div>
 
 </div>
-
+    <script src="js/test.js"></script>
+    <script src="js/address.js" type="text/javascript"></script>
 </body>
 </html>
