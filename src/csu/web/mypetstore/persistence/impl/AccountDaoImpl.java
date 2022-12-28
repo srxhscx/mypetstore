@@ -1,6 +1,7 @@
 package csu.web.mypetstore.persistence.impl;
 
 import csu.web.mypetstore.domain.Account;
+import csu.web.mypetstore.domain.Consignee;
 import csu.web.mypetstore.persistence.AccountDAO;
 import csu.web.mypetstore.persistence.DBUtil;
 
@@ -116,7 +117,6 @@ public class AccountDaoImpl implements AccountDAO {
         account.setListOption(resultSet.getBoolean("ListOption"));
         account.setAddress1(resultSet.getString("Address1"));
         account.setAddress2(resultSet.getString("Address2"));
-//        account.setPassword(resultSet.getString("password"));
         account.setPhone(resultSet.getString("phone"));
         account.setState(resultSet.getString("state"));
         account.setStatus(resultSet.getString("status"));
@@ -165,6 +165,7 @@ public class AccountDaoImpl implements AccountDAO {
         }
         return account;
     }
+
 
     @Override
     public void insertAccount(Account var1) {
@@ -297,6 +298,8 @@ public class AccountDaoImpl implements AccountDAO {
             e.printStackTrace();
         }
     }
+
+
 
     public static void main(String[] args){
         AccountDAO accountDAO = new AccountDaoImpl();

@@ -637,4 +637,18 @@ ul#drop li {
 ul#drop li:hover {
     background-color: skyblue;
     color: white;
+    cursor: pointer;
+}
+
+.change_address{
+    float: right;
+    margin-right: 10px;
+    color: #215496;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.change_address:hover {
+    color: #666666;
+    cursor: pointer;
 }

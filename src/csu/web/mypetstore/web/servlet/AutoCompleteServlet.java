@@ -1,6 +1,6 @@
 package csu.web.mypetstore.web.servlet;
 
-//import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSON;
 import csu.web.mypetstore.domain.Product;
 import csu.web.mypetstore.service.CatalogService;
 
@@ -25,10 +25,9 @@ public class AutoCompleteServlet extends HttpServlet {
         String keyword = req.getParameter("keyword");
         CatalogService catalogService = new CatalogService();
         List<Product> productList = catalogService.searchProductList(keyword);
-        System.out.println("aaa");
-  //      result = JSON.toJSONString(productList);
+
+        result = JSON.toJSONString(productList);
         //System.out.println(result);
-        System.out.println("sss");
         resp.setContentType("text/json");
         PrintWriter out = resp.getWriter();
         out.println(result);

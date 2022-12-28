@@ -46,13 +46,11 @@ public class SignOnServlet extends HttpServlet {
                     loginAccount.setPassword(null);
                     HttpSession session = req.getSession();
                     session.setAttribute("loginAccount",loginAccount);
-
                     if(loginAccount.isListOption()){
                         CatalogService catalogService = new CatalogService();
                         List<Product> myList = catalogService.getProductListByCategory(loginAccount.getFavouriteCategoryId());
                         session.setAttribute("myList",myList);
                     }
-
                     resp.sendRedirect("mainForm");
                 }
             }

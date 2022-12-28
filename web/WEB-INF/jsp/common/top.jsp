@@ -8,7 +8,9 @@
 <head>
     <title>MyPetStore</title>
     <link rel="StyleSheet" href="css/mypetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="css/add.css" type="text/css" media="screen" />
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/58a85252df.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

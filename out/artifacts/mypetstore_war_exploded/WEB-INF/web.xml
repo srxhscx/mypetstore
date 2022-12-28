@@ -228,14 +228,10 @@
         <url-pattern>/viewOrder</url-pattern>
     </servlet-mapping>
 
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-    <servlet>
-        <servlet-name>AutoCompleteServlet</servlet-name>
-        <servlet-class>csu.web.mypetstore.web.servlet.AutoCompleteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AutoCompleteServlet</servlet-name>
-        <url-pattern>/autoComplete</url-pattern>
-    </servlet-mapping>
 
 </web-app>
