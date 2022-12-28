@@ -37,6 +37,8 @@ public class UpdateCartServlet extends HttpServlet {
                 //ignore parse exceptions on purpose
             }
         }
+
         req.getRequestDispatcher(CART_FORM).forward(req,resp);
     }
+
 }

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html >
 
-<html >
+<html>
 
 <head>
     <title>MyPetStore</title>

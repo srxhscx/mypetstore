@@ -63,6 +63,16 @@
         <servlet-name>NewAccountServlet</servlet-name>
         <servlet-class>csu.web.mypetstore.web.servlet.NewAccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/UpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
     <servlet-mapping>
         <servlet-name>NewAccountServlet</servlet-name>
         <url-pattern>/NewAccount</url-pattern>
