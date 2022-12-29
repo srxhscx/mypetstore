@@ -1,8 +1,9 @@
 <%@ include file="../common/top.jsp"%>
-
 <div id="BackLink">
     <a href="mainForm">Return to Main Menu</a>
 </div>
+
+
 
 <div id="Catalog">
 
@@ -11,7 +12,7 @@
         <h2>Shopping Cart</h2>
 
         <form action="updateCart" method="post">
-            <table>
+            <table id="table">
                 <tr>
                     <th><b>Item ID</b></th>
                     <th><b>Product ID</b></th>
@@ -29,6 +30,7 @@
                     </tr>
                 </c:if>
 
+
                 <c:forEach var="cartItem" items="${sessionScope.cart.cartItems}">
                     <tr>
                         <td>
@@ -41,20 +43,24 @@
                         <td>${cartItem.inStock}</td>
                         <td>
 
-                            <input type="text" name="${cartItem.item.itemId}" value="${cartItem.quantity}">
+                            <input type="text"  id="quantity" name="${cartItem.item.itemId}" value="${cartItem.quantity}"onblur="updateCart();">
+                            <div id="cartMsg"></div>
+                            <script type="text/javascript" src="js/Update.js"></script>
 
                         </td>
                         <td><fmt:formatNumber value="${cartItem.item.listPrice}"
                                               pattern="$#,##0.00" /></td>
-                        <td><fmt:formatNumber value="${cartItem.total}"
-                                              pattern="$#,##0.00" /></td>
+
+                        <td>
+                        <label id="total">${cartItem.total}</label>
+
                         <td>
                             <a href="removeCartItem?workingItemId=${cartItem.item.itemId}" class="Button">Remove</a>
                         </td>
                     </tr>
                 </c:forEach>
                 <tr>
-                    <td colspan="7">Sub Total: <fmt:formatNumber value="${sessionScope.cart.subTotal}" pattern="$#,##0.00" />
+                    <td colspan="7">Sub Total: <label id="subtotal">${sessionScope.cart.subTotal}</label>
                         <input type="submit" value="Update Cart">
                     </td>
 
@@ -80,5 +86,6 @@
 
     <div id="Separator">&nbsp;</div>
 </div>
+
 
 <%@ include file="../common/bottom.jsp"%>

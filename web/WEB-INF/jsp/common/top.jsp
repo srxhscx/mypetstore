@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html >
 
-<html >
+<html>
 
 <head>
     <title>MyPetStore</title>
@@ -52,18 +52,20 @@
 
         <div id="QuickLinks">
             <br /> <br /> <br /> <br /><br />
-            <a href="categoryForm?categoryId=FISH" ><img src="images/sm_fish.gif" /></a>&nbsp&nbsp&nbsp&nbsp
+            <button>FISH</button>&nbsp&nbsp&nbsp&nbsp
             <img src="images/separator.gif" />&nbsp&nbsp&nbsp&nbsp
-            <a href="categoryForm?categoryId=DOGS"> <img src="images/sm_dogs.gif" /></a>&nbsp&nbsp&nbsp&nbsp
+            <button>DOGS</button>&nbsp&nbsp&nbsp&nbsp
             <img src="images/separator.gif" />&nbsp&nbsp&nbsp&nbsp
-            <a href="categoryForm?categoryId=REPTILES"> <img src="images/sm_reptiles.gif" /></a>&nbsp&nbsp&nbsp&nbsp
+            <button>REPTILES</button>&nbsp&nbsp&nbsp&nbsp
             <img src="images/separator.gif" />&nbsp&nbsp&nbsp&nbsp
-            <a href="categoryForm?categoryId=CATS"> <img src="images/sm_cats.gif" /></a>&nbsp&nbsp&nbsp&nbsp
+            <button>CATS</button>&nbsp&nbsp&nbsp&nbsp
             <img src="images/separator.gif" />&nbsp&nbsp&nbsp&nbsp
-            <a href="categoryForm?categoryId=BIRDS"> <img src="images/sm_birds.gif" /></a>&nbsp&nbsp&nbsp
+            <button>BIRDS</button>&nbsp&nbsp&nbsp
             <img src="images/separator.gif" /><br />
         </div>
+        <div id="content2">
 
+        </div>
 
 <div id="Content">
 

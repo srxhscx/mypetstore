@@ -1,8 +1,6 @@
 package csu.web.mypetstore.web.servlet;
 
 import csu.web.mypetstore.domain.Cart;
-import csu.web.mypetstore.domain.Item;
-import csu.web.mypetstore.service.CatalogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,13 +18,11 @@ public class CartForm extends HttpServlet {
         HttpSession session = req.getSession();
 
         Cart cart = (Cart) session.getAttribute("cart");
-
-
-
             cart = new Cart();
         
         session.setAttribute("cart",cart);
         req.getRequestDispatcher(CART_FORM).forward(req,resp);
     }
+
 
 }

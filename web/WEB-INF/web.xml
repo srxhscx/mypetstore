@@ -63,6 +63,16 @@
         <servlet-name>NewAccountServlet</servlet-name>
         <servlet-class>csu.web.mypetstore.web.servlet.NewAccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/UpdateServlet</url-pattern>
+    </servlet-mapping>
+
+
     <servlet-mapping>
         <servlet-name>NewAccountServlet</servlet-name>
         <url-pattern>/NewAccount</url-pattern>
@@ -227,11 +237,18 @@
         <servlet-name>ViewOrderServlet</servlet-name>
         <url-pattern>/viewOrder</url-pattern>
     </servlet-mapping>
-
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+    <servlet>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.CategoryShowJsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <url-pattern>/CategoryShowJsServlet</url-pattern>
+    </servlet-mapping>
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-web</artifactId>-->
+<!--    </dependency>-->
 
 
 </web-app>
