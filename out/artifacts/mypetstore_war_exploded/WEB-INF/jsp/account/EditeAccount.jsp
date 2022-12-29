@@ -9,13 +9,43 @@
 
             <h3>User Information</h3>
 
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            $(function () {
+                var username = $('#username');
+                const name = username.val();
 
+                username.on('blur',function () {
+                    if(username.val()===''){
+                        console.log("ok?");
+                    }else{
+                        console.log("???");
+                        $.ajax({
+                            type    :'POST',
+                            url     :'check?username='+username.val(),
+                            // data    :{"username":username.val()},
+                            success :function (data) {
+                                if(data.name === 'name') {
+                                    if(name !== data.name)
+                                        username.val("repeated username");
+                                }
+                                console.log(data.name);
+                                console.log("success")
+                            },
+                            error   :function () {
+                                console.log("error");
+                            }
+                        });
+                    }
+                })
+            })
+        </script>
         <table>
 
             <tr>
                 <td>User ID:</td>
                 <td>
-                    <input type="text" value="${sessionScope.loginAccount.username}" name="username">
+                    <input type="text" value="${sessionScope.loginAccount.username}" name="username" id="username">
                 </td>
             </tr>
 

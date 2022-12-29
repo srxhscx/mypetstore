@@ -20,25 +20,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="activation-1.1.1" level="project" />
-    <orderEntry type="library" name="fastjson-1.2.79" level="project" />
     <orderEntry type="library" name="validation-api-2.0.1.Final" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="javax.mail" level="project" />
-    <orderEntry type="library" name="jsp-api" level="project" />
-    <orderEntry type="library" name="jstl" level="project" />
-    <orderEntry type="library" name="stripes-1.5.4" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../360Download/apache-tomcat-8.0.50/work" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/../../../360Download/apache-tomcat-8.0.50/work/Catalina/localhost/ROOT" />
-          <root url="file://$MODULE_DIR$/../../../360Download/apache-tomcat-8.0.50/work/Catalina/localhost/jpetstore" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="activation" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.30" level="project" />
     <orderEntry type="library" name="stripes-1.5.4" level="project" />
@@ -47,9 +31,6 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery-latest" level="application" />
     <orderEntry type="library" name="spring-web-4.3.6.RELEASE" level="project" />
-    <orderEntry type="library" name="servlet-api" level="project" />
-    <orderEntry type="library" name="javax.mail" level="project" />
-    <orderEntry type="library" name="mysql-connector-j-8.0.31" level="project" />
-    <orderEntry type="library" name="validation-api-2.0.1.Final" level="project" />
+    <orderEntry type="library" name="fastjson-1.2.79" level="project" />
   </component>
 </module>
