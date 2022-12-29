@@ -30,6 +30,7 @@
 
 .selectAddress {
     position: absolute;
+    padding-bottom: 20px;
     display: none;
     top: 89px;
     left: 224px;
@@ -80,6 +81,10 @@
     text-align: right;
     margin-right: 10px;
     font-size: 8px;
+}
+
+.address-operator span{
+    margin-right: 7px;
 }
 
 .address-operator:hover{

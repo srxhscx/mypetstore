@@ -683,7 +683,7 @@ button{
 
 .login_item {
     list-style: none;
-    margin: 40px 103px 0 auto;
+    margin: 40px 101px 0 auto;
     height: 30px;
     line-height: 30px;
     float: right;
@@ -710,6 +710,7 @@ button{
     width: 120px;
     line-height: 26px;
     border-radius: 8px;
+    margin-left: 5px;
 }
 
 #captcha {
