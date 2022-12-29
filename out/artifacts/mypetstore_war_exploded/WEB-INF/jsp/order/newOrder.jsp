@@ -8,31 +8,32 @@
     <div class="selectAddress">
         <div class="bar">Please choose a consignee</div>
         <span class="close">x</span>
-        <c:forEach var="consignee" items="${sessionScope.consigneeList}">
-            <div class="addressItem chooseItem">
-                <div name="firstName" class="detail">${consignee.firstName}</div>
-                <div name="lastName" class="detail">${consignee.lastName}</div>
-                <div name="address1" class="detail">${consignee.address1}</div>
-                <div name="address2" class="detail">${consignee.address2}</div>
-                <div name="city" class="detail">${consignee.city}</div>
-                <div name="state" class="detail">${consignee.state}</div>
-                <div name="zip" class="detail">${consignee.zip}</div>
-                <div name="country" class="detail">${consignee.country}</div>
-                <div class="address-operator">
-                    <span class="link">edit</span>
-                    <span class="link">delete</span>
+        <div class="selectAddress_list">
+            <c:forEach var="consignee" items="${sessionScope.consigneeList}">
+                <div class="addressItem chooseItem">
+                    <div name="firstName" class="detail">${consignee.firstName}</div>
+                    <div name="lastName" class="detail">${consignee.lastName}</div>
+                    <div name="address1" class="detail">${consignee.address1}</div>
+                    <div name="address2" class="detail">${consignee.address2}</div>
+                    <div name="city" class="detail">${consignee.city}</div>
+                    <div name="state" class="detail">${consignee.state}</div>
+                    <div name="zip" class="detail">${consignee.zip}</div>
+                    <div name="country" class="detail">${consignee.country}</div>
+                    <div class="address-operator">
+                        <span class="link edit_address">edit</span>
+                        <span class="link delete_address">delete</span>
+                    </div>
+                </div>
+            </c:forEach>
+            <div class="addressItem" id="add_new_consignee">
+                <div class="add_address">
+                    <i class="fa fa-plus"></i>
+                    <div class="addNew">Add new consignee</div>
                 </div>
             </div>
-        </c:forEach>
-        <div class="addressItem" id="add_new_consignee">
-            <div class="add_address">
-                <i class="fa fa-plus"></i>
-                <div class="addNew">Add new consignee</div>
-            </div>
-        </div>
-        <div class="new_address_detail">
-            <span class="tip">Please enter new consignee info</span>
-<%--            <form action="" method="post">--%>
+            <div class="new_address_detail">
+                <span class="tip">Please enter new consignee info</span>
+                <%--            <form action="" method="post">--%>
                 <ul class="detailList">
                     <li class="item">First name:<input type="text" class="firstname"></li>
                     <li class="item">Last name:<input type="text" class="lastname"></li>
@@ -46,7 +47,8 @@
 
                 <button type="submit" id="add">Add new consignee</button>
                 <button class="cancel">Cancel</button>
-<%--            </form>--%>
+                <%--            </form>--%>
+            </div>
         </div>
     </div>
 
@@ -121,16 +123,4 @@
         </tr>
 
         <tr>
-            <td colspan=2><input type="checkbox" name="shippingAddressRequired">
-                Ship to different address...</td>
-        </tr>
-
-    </table>
-
-    <input type="submit" name="newOrder" value="Continue">
-
-</form></div>
-
-
-
-<%@ include file="../common/bottom.jsp"%>
+            <td colspan=2><input type="checkbox" name="shippingAddressRe
