@@ -46,7 +46,7 @@ $(document).on('click', '.chooseItem', function(e) {
 
 })
 
-$(document).on('click', '.addressItem', function(){
+$(document).on('click', '#add_new_consignee', function(){
     new_address_detail.style.display = 'block';
 })
 
