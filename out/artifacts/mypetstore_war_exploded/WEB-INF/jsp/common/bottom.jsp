@@ -25,7 +25,10 @@
     </div>
 
 </div>
-    <script src="js/test.js"></script>
     <script src="js/address.js" type="text/javascript"></script>
+    <script src="js/product.js"></script>
+    <script src="js/test.js"></script>
+<script src="js/mouseEvent.js" type="text/JavaScript"></script>
+
 </body>
 </html>

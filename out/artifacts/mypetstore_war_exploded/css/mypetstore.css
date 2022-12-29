@@ -570,7 +570,7 @@ body>#Banner {
 				height:40px;
 				border:0;
 				font-size:14pt;
-				font-family;"微软雅黑";
+				font-family:"微软雅黑";
 				background-color:#FC5628;
 				color:#ffffff;
 				cursor:pointer;/*设置指针鼠标的样式*/
@@ -651,4 +651,26 @@ ul#drop li:hover {
 .change_address:hover {
     color: #666666;
     cursor: pointer;
+}
+
+#content1{
+    display: flex;
+    height: 130px;
+    margin: 20px 0;
+    padding: 20px 50px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+#content1 p{
+    color:yellowgreen;
+    font-weight: bold;
+}
+.product{
+    margin-right: 30px;
+}
+
+button{
+    border-style: none;
+    font-size: 20px;
+    font-width: bold;
 }

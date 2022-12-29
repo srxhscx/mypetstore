@@ -1,6 +1,6 @@
 package csu.web.mypetstore.persistence.impl;
 
-import com.mysql.cj.jdbc.CallableStatement;
+//import com.mysql.cj.jdbc.CallableStatement;
 import csu.web.mypetstore.domain.Journal;
 import csu.web.mypetstore.persistence.DBUtil;
 import csu.web.mypetstore.persistence.JournalDAO;

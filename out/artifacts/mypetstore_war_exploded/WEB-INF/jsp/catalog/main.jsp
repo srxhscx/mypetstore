@@ -83,7 +83,7 @@
     <a href="itemForm?itemId=EST-6"	><img src="images/card4.jpeg" onmouseover="processResponse4()" onmouseout="processResponse44()"></a>
     <h2>learn EST-6</h2>
 </div>
-<script src="js/mouseEvent.js" type="text/JavaScript"></script>
+
 
 
 

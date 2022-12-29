@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="activation">
+  <library name="stripes-1.5.7">
     <CLASSES>
-      <root url="jar://D:/java/jar/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../javaJar/stripes-1.5.7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
