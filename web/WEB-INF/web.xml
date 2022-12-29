@@ -237,7 +237,14 @@
         <servlet-name>ViewOrderServlet</servlet-name>
         <url-pattern>/viewOrder</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <servlet-class>csu.web.mypetstore.web.servlet.CategoryShowJsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryShowJsServlet</servlet-name>
+        <url-pattern>/CategoryShowJsServlet</url-pattern>
+    </servlet-mapping>
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>

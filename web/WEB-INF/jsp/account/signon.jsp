@@ -40,9 +40,9 @@
 
                  $('#login').mouseover(function(){
                      if(username.val() !== ""&&password.val() !== ""&&captcha.val() !== ""){
-                         $('#login').prop('disabled', true);
-                     }else{
                          $('#login').prop('disabled', false);
+                     }else{
+                         $('#login').prop('disabled', true);
                      }
                  })
              })
