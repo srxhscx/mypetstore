@@ -31,5 +31,6 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery-latest" level="application" />
     <orderEntry type="library" name="spring-web-4.3.6.RELEASE" level="project" />
+    <orderEntry type="library" name="fastjson-1.2.79" level="project" />
   </component>
 </module>
