@@ -56,11 +56,13 @@ $(document).on('click', '#add_new_consignee', function(){
     new_zip.value = '';
     new_country.value = '';
     add.innerHTML = 'Add new consignee';
+
     new_address_detail.style.display = 'block';
 })
 
 let cancel = document.querySelector('.cancel');
 cancel.addEventListener('click',function (){
+
     new_address_detail.style.display = 'none';
 })
 
