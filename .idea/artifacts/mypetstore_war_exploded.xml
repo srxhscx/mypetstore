@@ -6,16 +6,20 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="mypetstore" />
-          <element id="dir-copy" path="$PROJECT_DIR$/../../../360Download/apache-tomcat-8.0.50/work" />
         </element>
         <element id="directory" name="lib">
-          <element id="module-output" name="mypetstore" />
-          <element id="library" level="project" name="stripes-1.5.4" />
-          <element id="library" level="project" name="jstl" />
-          <element id="library" level="project" name="javax.mail" />
-          <element id="library" level="project" name="validation-api-2.0.1.Final" />
-          <element id="library" level="project" name="mysql-connector-j-8.0.31" />
           <element id="library" level="project" name="fastjson-1.2.79" />
+          <element id="library" level="project" name="javax.mail" />
+          <element id="library" level="project" name="jsp-api" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="mysql-connector-j-8.0.31" />
+          <element id="library" level="project" name="validation-api-2.0.1.Final" />
+          <element id="library" level="project" name="javax.mail" />
+          <element id="library" level="project" name="activation" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.30" />
+          <element id="library" level="project" name="stripes-1.5.4" />
+          <element id="library" level="project" name="standard" />
+          <element id="library" level="project" name="commons-email-1.5" />
         </element>
       </element>
     </root>

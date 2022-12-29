@@ -653,6 +653,28 @@ ul#drop li:hover {
     cursor: pointer;
 }
 
+#content1{
+    display: flex;
+    height: 130px;
+    margin: 20px 0;
+    padding: 20px 50px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+#content1 p{
+    color:yellowgreen;
+    font-weight: bold;
+}
+.product{
+    margin-right: 30px;
+}
+
+button{
+    border-style: none;
+    font-size: 20px;
+    font-width: bold;
+}
+
 .tips {
     margin: 10px auto;
     font-size: 30px;
