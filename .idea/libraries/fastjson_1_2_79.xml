@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="fastjson-1.2.79">
     <CLASSES>
-      <root url="jar://D:/java/jar/fastjson-1.2.79.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../360Download/fastjson-1.2.79.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

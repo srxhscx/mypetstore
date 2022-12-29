@@ -13,7 +13,6 @@
         <script>
             $(function () {
                 var username = $('#username');
-                const name = username.val();
 
                 username.on('blur',function () {
                     if(username.val()===''){
@@ -26,7 +25,6 @@
                             // data    :{"username":username.val()},
                             success :function (data) {
                                 if(data.name === 'name') {
-                                    if(name !== data.name)
                                         username.val("repeated username");
                                 }
                                 console.log(data.name);

@@ -123,4 +123,16 @@
         </tr>
 
         <tr>
-            <td colspan=2><input type="checkbox" name="shippingAddressRe
+            <td colspan=2><input type="checkbox" name="shippingAddressRequired">
+                Ship to different address...</td>
+        </tr>
+
+    </table>
+
+    <input type="submit" name="newOrder" value="Continue">
+
+</form></div>
+
+
+
+<%@ include file="../common/bottom.jsp"%>
