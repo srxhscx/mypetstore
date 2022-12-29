@@ -699,7 +699,8 @@ button{
 }
 
 .login_input_list {
-    margin: -15px auto 10px auto;
+    position: relative;
+    margin: -40px auto -20px auto;
     height: 260px;
     width: 460px;
 }
@@ -712,12 +713,13 @@ button{
 }
 
 #captcha {
-    width: 122px;
+    width: 117px;
+    margin-right: 5px;
 }
 
 #isRegister {
     display: block;
-    margin-top: 90px;
+    margin-top: 10px;
 }
 
 .toRegister {

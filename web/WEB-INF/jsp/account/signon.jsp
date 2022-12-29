@@ -62,7 +62,7 @@
                 <li class="login_item">Password:<input type="password" name="password" id="password"><br>
                     <font id="PMSG"></font>
                 </li>
-                <li class="login_item">Captcha:<input type="text" name="captcha" id="captcha"><img id="img" src="<%= request.getContextPath()%>/checkcodeServlet" /><br>
+                <li class="login_item">Captcha:<input type="text" name="captcha" id="captcha"><img id="img" class="captcha" src="<%= request.getContextPath()%>/checkcodeServlet" /><br>
                     <font id="CMSG"></font>
                 </li>
             </ul>
